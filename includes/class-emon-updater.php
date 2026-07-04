@@ -68,6 +68,11 @@ class Emon_Plugin_Updater {
 
 		// Delete our transient after a successful update so next check is fresh
 		add_action( 'upgrader_process_complete', array( $this, 'clear_cache' ), 10, 2 );
+
+		// Force update check if requested
+		if ( is_admin() && isset( $_GET['force-check'] ) && $_GET['force-check'] == 1 ) {
+			add_action( 'admin_init', array( $this, 'force_wp_update_check' ) );
+		}
 	}
 
 	// -------------------------------------------------------------------------
@@ -376,6 +381,14 @@ class Emon_Plugin_Updater {
 			$this->github_data = null;
 			debugPrint( '[Emon Updater] Cleared update cache after successful update.' );
 		}
+	}
+
+	/**
+	 * Force WordPress to clear plugin update transients.
+	 */
+	public function force_wp_update_check() {
+		delete_site_transient( 'update_plugins' );
+		wp_clean_plugins_cache();
 	}
 }
 
