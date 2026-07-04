@@ -1,172 +1,272 @@
 /**
  * Checkout Field by Emon - Admin Custom Stylesheet
- * High-end, premium SaaS layout overrides for ThemeHigh settings screen.
+ * Premium Modern UI - v2.0
  */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* ============================================================
+   CSS VARIABLES
+   ============================================================ */
 :root {
-	--wc-cfm-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-	--wc-cfm-primary: #4f46e5;
-	--wc-cfm-primary-hover: #4338ca;
-	--wc-cfm-primary-light: rgba(79, 70, 229, 0.08);
-	--wc-cfm-primary-glow: rgba(79, 70, 229, 0.15);
-	--wc-cfm-success: #10b981;
-	--wc-cfm-success-glow: rgba(16, 185, 129, 0.25);
-	--wc-cfm-danger: #f87171;
-	--wc-cfm-danger-hover: #ef4444;
-	--wc-cfm-danger-light: rgba(239, 68, 68, 0.06);
-	--wc-cfm-text-dark: #0f172a;
-	--wc-cfm-text-muted: #64748b;
-	--wc-cfm-bg-card: #ffffff;
-	--wc-cfm-bg-body: #f8fafc;
-	--wc-cfm-border: #e2e8f0;
-	--wc-cfm-border-hover: #cbd5e1;
-	--wc-cfm-radius-lg: 16px;
-	--wc-cfm-radius-md: 12px;
-	--wc-cfm-radius-sm: 8px;
-	--wc-cfm-shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.03), 0 1px 2px 0 rgba(0, 0, 0, 0.02);
-	--wc-cfm-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-	--wc-cfm-shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
-	--wc-cfm-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+	--cf-font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+	/* Brand */
+	--cf-primary:        #6366f1;
+	--cf-primary-hover:  #4f46e5;
+	--cf-primary-light:  rgba(99, 102, 241, 0.10);
+	--cf-primary-glow:   rgba(99, 102, 241, 0.22);
+
+	/* Status */
+	--cf-success:        #22c55e;
+	--cf-success-bg:     rgba(34, 197, 94, 0.10);
+	--cf-danger:         #f43f5e;
+	--cf-danger-bg:      rgba(244, 63, 94, 0.09);
+	--cf-warning:        #f59e0b;
+	--cf-warning-bg:     rgba(245, 158, 11, 0.10);
+
+	/* Text */
+	--cf-text:           #111827;
+	--cf-text-muted:     #6b7280;
+	--cf-text-light:     #9ca3af;
+
+	/* Surfaces */
+	--cf-bg:             #f3f4f8;
+	--cf-card:           #ffffff;
+	--cf-card-hover:     #fafaff;
+
+	/* Borders */
+	--cf-border:         #e5e7eb;
+	--cf-border-strong:  #d1d5db;
+
+	/* Radius */
+	--cf-r-xs: 6px;
+	--cf-r-sm: 10px;
+	--cf-r-md: 14px;
+	--cf-r-lg: 20px;
+	--cf-r-xl: 28px;
+
+	/* Shadows */
+	--cf-shadow-xs: 0 1px 2px rgba(0,0,0,0.04);
+	--cf-shadow-sm: 0 1px 4px rgba(0,0,0,0.06), 0 4px 12px rgba(0,0,0,0.04);
+	--cf-shadow-md: 0 4px 16px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+	--cf-shadow-lg: 0 12px 32px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.04);
+	--cf-shadow-primary: 0 6px 20px rgba(99,102,241,0.28);
+
+	/* Transitions */
+	--cf-ease: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Base Body Styles */
-.wc-cfm-wrap.thwcfd-wrap {
-	font-family: var(--wc-cfm-font) !important;
-	max-width: 1250px !important;
-	margin: 24px 24px 80px 0 !important;
-	color: var(--wc-cfm-text-dark) !important;
+/* ============================================================
+   BASE WRAP
+   ============================================================ */
+.wc-cfm-wrap.thwcfd-wrap,
+.wrap.wc-cfm-wrap {
+	font-family: var(--cf-font) !important;
+	max-width: 1300px !important;
+	margin: 28px 24px 100px 0 !important;
+	color: var(--cf-text) !important;
+	background: var(--cf-bg) !important;
+	-webkit-font-smoothing: antialiased;
 }
 
-/* Hide Default WooCommerce Title */
+/* Hide WP default h1 */
+.woocommerce_page_checkout_form_designer .wrap > h1:first-of-type,
 .woocommerce_page_checkout_form_designer .wrap > h2:first-of-type {
 	display: none !important;
 }
 
-/* Custom Premium Header */
+/* ============================================================
+   HEADER - Glassmorphism gradient bar
+   ============================================================ */
 .wc-cfm-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
-	padding: 28px 32px;
-	border-radius: var(--wc-cfm-radius-lg);
-	box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.3);
-	margin-bottom: 28px;
-	border: none;
-	color: #ffffff;
+	display: flex !important;
+	justify-content: space-between !important;
+	align-items: center !important;
+	background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%) !important;
+	padding: 24px 32px !important;
+	border-radius: var(--cf-r-lg) !important;
+	box-shadow: 0 12px 40px rgba(99,102,241,0.30), 0 4px 8px rgba(0,0,0,0.08) !important;
+	margin-bottom: 32px !important;
+	position: relative;
+	overflow: hidden;
+}
+
+.wc-cfm-header::before {
+	content: '';
+	position: absolute;
+	top: -40px; right: -40px;
+	width: 200px; height: 200px;
+	background: rgba(255,255,255,0.08);
+	border-radius: 50%;
+}
+
+.wc-cfm-header::after {
+	content: '';
+	position: absolute;
+	bottom: -60px; left: 30%;
+	width: 260px; height: 260px;
+	background: rgba(255,255,255,0.05);
+	border-radius: 50%;
 }
 
 .wc-cfm-branding {
-	display: flex;
-	align-items: center;
-	gap: 20px;
+	display: flex !important;
+	align-items: center !important;
+	gap: 18px !important;
+	position: relative;
+	z-index: 1;
 }
 
 .wc-cfm-logo {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 56px;
-	height: 56px;
-	background: rgba(255, 255, 255, 0.18);
-	backdrop-filter: blur(10px);
-	-webkit-backdrop-filter: blur(10px);
-	color: #ffffff;
-	font-size: 26px;
-	border-radius: 14px;
-	border: 1px solid rgba(255, 255, 255, 0.25);
-	text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	width: 52px !important;
+	height: 52px !important;
+	background: rgba(255,255,255,0.18) !important;
+	backdrop-filter: blur(12px) !important;
+	color: #fff !important;
+	font-size: 24px !important;
+	border-radius: 14px !important;
+	border: 1.5px solid rgba(255,255,255,0.30) !important;
+	flex-shrink: 0;
 }
 
 .wc-cfm-branding h1 {
-	font-family: var(--wc-cfm-font) !important;
-	font-size: 24px !important;
+	font-family: var(--cf-font) !important;
+	font-size: 22px !important;
 	font-weight: 800 !important;
-	margin: 0 0 6px 0 !important;
+	margin: 0 0 5px 0 !important;
 	color: #ffffff !important;
-	letter-spacing: -0.5px;
-	line-height: 1.2;
+	letter-spacing: -0.4px !important;
+	line-height: 1.2 !important;
 }
 
 .wc-cfm-branding .description {
-	font-size: 14px !important;
-	color: rgba(255, 255, 255, 0.85) !important;
+	font-size: 13px !important;
+	color: rgba(255,255,255,0.80) !important;
 	margin: 0 !important;
 	font-weight: 500 !important;
 }
 
-/* Tabs Bar Override - Modern Pill Shape */
+/* Header right badges / links */
+.wc-cfm-header-right {
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	position: relative;
+	z-index: 1;
+}
+
+.wc-cfm-header-right a {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	padding: 9px 18px;
+	border-radius: 30px;
+	font-size: 13px;
+	font-weight: 600;
+	text-decoration: none !important;
+	transition: all 0.2s var(--cf-ease);
+}
+
+.wc-cfm-header-right .btn-docs {
+	background: rgba(255,255,255,0.18);
+	color: #fff !important;
+	border: 1px solid rgba(255,255,255,0.25);
+}
+.wc-cfm-header-right .btn-docs:hover {
+	background: rgba(255,255,255,0.28);
+}
+
+/* ============================================================
+   NAV TABS - Pill bar
+   ============================================================ */
 .wc-cfm-wrap .nav-tab-wrapper.thpladmin-tabs {
 	display: inline-flex !important;
-	background: #f1f5f9 !important;
-	padding: 6px !important;
-	border-radius: 30px !important;
-	gap: 4px !important;
-	border: none !important;
+	background: #ffffff !important;
+	padding: 5px !important;
+	border-radius: 50px !important;
+	gap: 3px !important;
+	border: 1px solid var(--cf-border) !important;
 	margin-bottom: 28px !important;
-	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03) !important;
+	box-shadow: var(--cf-shadow-xs) !important;
 }
 
 .wc-cfm-wrap .nav-tab-wrapper.thpladmin-tabs .nav-tab {
 	background: transparent !important;
 	border: none !important;
-	font-family: var(--wc-cfm-font) !important;
-	font-size: 14px !important;
+	font-family: var(--cf-font) !important;
+	font-size: 13px !important;
 	font-weight: 600 !important;
-	color: var(--wc-cfm-text-muted) !important;
-	padding: 10px 24px !important;
-	border-radius: 20px !important;
+	color: var(--cf-text-muted) !important;
+	padding: 9px 22px !important;
+	border-radius: 50px !important;
 	margin: 0 !important;
-	transition: all 0.25s ease !important;
+	transition: all 0.22s var(--cf-ease) !important;
 	cursor: pointer !important;
 	line-height: 1.2 !important;
 }
 
 .wc-cfm-wrap .nav-tab-wrapper.thpladmin-tabs .nav-tab:hover {
-	color: var(--wc-cfm-text-dark) !important;
+	color: var(--cf-text) !important;
+	background: var(--cf-primary-light) !important;
 }
 
 .wc-cfm-wrap .nav-tab-wrapper.thpladmin-tabs .nav-tab-active {
-	background: #ffffff !important;
-	color: var(--wc-cfm-primary) !important;
-	box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05) !important;
+	background: var(--cf-primary) !important;
+	color: #ffffff !important;
+	box-shadow: 0 4px 12px rgba(99,102,241,0.30) !important;
 }
 
-/* Sections List (Billing / Shipping / Additional) */
+/* ============================================================
+   SECTION SWITCHER (Billing / Shipping / Additional)
+   ============================================================ */
 .thpladmin-sections {
-	margin: 0 0 24px 0 !important;
+	margin: 0 0 20px 0 !important;
 	padding: 0 !important;
 	list-style: none !important;
 	display: flex !important;
-	gap: 16px !important;
+	gap: 8px !important;
 	align-items: center !important;
-	font-size: 14px !important;
-	font-weight: 600 !important;
 }
 
 .thpladmin-sections li {
 	margin: 0 !important;
 	padding: 0 !important;
-	color: #cbd5e1 !important; /* hide the '|' separators by making them light */
+	color: transparent !important; /* hide pipe separators */
 }
 
 .thpladmin-sections li a {
-	color: var(--wc-cfm-text-muted) !important;
+	display: inline-block;
+	color: var(--cf-text-muted) !important;
 	text-decoration: none !important;
-	padding: 6px 14px !important;
-	border-radius: 30px !important;
+	padding: 7px 18px !important;
+	border-radius: 50px !important;
 	background: #ffffff !important;
-	border: 1px solid var(--wc-cfm-border) !important;
-	transition: all 0.2s ease !important;
+	border: 1.5px solid var(--cf-border) !important;
+	font-size: 13px !important;
+	font-weight: 600 !important;
+	transition: all 0.2s var(--cf-ease) !important;
 }
 
-.thpladmin-sections li a:hover,
+.thpladmin-sections li a:hover {
+	color: var(--cf-primary) !important;
+	border-color: var(--cf-primary) !important;
+	background: var(--cf-primary-light) !important;
+}
+
 .thpladmin-sections li a.current {
-	color: var(--wc-cfm-primary) !important;
-	border-color: var(--wc-cfm-primary) !important;
-	background: var(--wc-cfm-primary-light) !important;
+	color: #fff !important;
+	border-color: var(--cf-primary) !important;
+	background: var(--cf-primary) !important;
+	box-shadow: 0 4px 12px rgba(99,102,241,0.25) !important;
 }
 
-/* Table Style Overrides to construct Cards */
+/* ============================================================
+   TOOLBAR (top action bar) - save / add new / bulk actions
+   ============================================================ */
 table#thwcfd_checkout_fields {
 	display: flex !important;
 	flex-direction: column !important;
@@ -184,341 +284,549 @@ table#thwcfd_checkout_fields tfoot {
 	width: 100% !important;
 }
 
-/* Action Rows - Styled as top/bottom action bars */
+/* Top & bottom toolbar rows */
 table#thwcfd_checkout_fields thead tr:first-child,
 table#thwcfd_checkout_fields tfoot tr:last-child {
 	display: flex !important;
 	justify-content: space-between !important;
 	align-items: center !important;
 	background: #ffffff !important;
-	padding: 16px 24px !important;
-	border-radius: var(--wc-cfm-radius-md) !important;
-	margin-bottom: 24px !important;
-	border: 1px solid var(--wc-cfm-border) !important;
-	box-shadow: var(--wc-cfm-shadow-sm) !important;
+	padding: 14px 22px !important;
+	border-radius: var(--cf-r-md) !important;
+	margin-bottom: 20px !important;
+	border: 1px solid var(--cf-border) !important;
+	box-shadow: var(--cf-shadow-xs) !important;
 	width: auto !important;
 }
 
 table#thwcfd_checkout_fields tfoot tr:last-child {
-	margin-top: 24px !important;
+	margin-top: 20px !important;
 	margin-bottom: 0 !important;
 }
 
 table#thwcfd_checkout_fields thead tr:first-child th,
 table#thwcfd_checkout_fields tfoot tr:last-child th {
 	display: flex !important;
-	gap: 12px !important;
+	gap: 10px !important;
 	background: transparent !important;
 	padding: 0 !important;
 	border: none !important;
 	width: auto !important;
 }
 
-/* Buttons styling override */
-.wc-cfm-wrap .button,
-.wc-cfm-wrap .button-primary,
-table#thwcfd_checkout_fields thead tr th button,
-table#thwcfd_checkout_fields thead tr th input[type="submit"] {
-	height: 42px !important;
-	padding: 0 20px !important;
-	font-family: var(--wc-cfm-font) !important;
-	font-size: 13px !important;
-	font-weight: 600 !important;
-	border-radius: var(--wc-cfm-radius-sm) !important;
-	display: inline-flex !important;
-	align-items: center !important;
-	justify-content: center !important;
-	transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
-	cursor: pointer !important;
-	border: 1px solid var(--wc-cfm-border) !important;
-	background: #ffffff !important;
-	color: var(--wc-cfm-text-dark) !important;
-	box-shadow: var(--wc-cfm-shadow-sm) !important;
-	text-shadow: none !important;
-}
-
-.wc-cfm-wrap .button-primary,
-table#thwcfd_checkout_fields thead tr th button.button-primary,
-table#thwcfd_checkout_fields thead tr th input[type="submit"].button-primary {
-	background-color: var(--wc-cfm-primary) !important;
-	border-color: var(--wc-cfm-primary) !important;
-	color: #ffffff !important;
-	box-shadow: 0 4px 10px rgba(79, 70, 229, 0.15) !important;
-}
-
-.wc-cfm-wrap .button-primary:hover,
-table#thwcfd_checkout_fields thead tr th button.button-primary:hover,
-table#thwcfd_checkout_fields thead tr th input[type="submit"].button-primary:hover {
-	background-color: var(--wc-cfm-primary-hover) !important;
-	border-color: var(--wc-cfm-primary-hover) !important;
-	box-shadow: 0 6px 14px rgba(79, 70, 229, 0.25) !important;
-	transform: translateY(-1.5px);
-}
-
-.wc-cfm-wrap .button:hover {
-	border-color: var(--wc-cfm-border-hover) !important;
-	background-color: #f8fafc !important;
-	transform: translateY(-1.5px);
-}
-
-/* Hide Table Header column descriptions */
+/* Hide column header row */
 table#thwcfd_checkout_fields thead tr:last-child,
 table#thwcfd_checkout_fields tfoot tr:first-child {
 	display: none !important;
 }
 
-/* Field Rows Container */
-table#thwcfd_checkout_fields tbody {
-	gap: 14px !important;
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.wc-cfm-wrap .button,
+.wc-cfm-wrap .button-secondary,
+table#thwcfd_checkout_fields thead tr th button,
+table#thwcfd_checkout_fields thead tr th input[type="submit"],
+table#thwcfd_checkout_fields tfoot tr th button,
+table#thwcfd_checkout_fields tfoot tr th input[type="submit"] {
+	height: 40px !important;
+	padding: 0 18px !important;
+	font-family: var(--cf-font) !important;
+	font-size: 13px !important;
+	font-weight: 600 !important;
+	border-radius: var(--cf-r-sm) !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	gap: 6px !important;
+	transition: all 0.2s var(--cf-ease) !important;
+	cursor: pointer !important;
+	border: 1.5px solid var(--cf-border) !important;
+	background: #ffffff !important;
+	color: var(--cf-text) !important;
+	box-shadow: var(--cf-shadow-xs) !important;
+	text-shadow: none !important;
 }
 
-/* Individual Row Card style */
+.wc-cfm-wrap .button:hover {
+	border-color: var(--cf-border-strong) !important;
+	background: #f9fafb !important;
+	transform: translateY(-1px);
+	box-shadow: var(--cf-shadow-sm) !important;
+}
+
+.wc-cfm-wrap .button-primary,
+table#thwcfd_checkout_fields thead tr th button.button-primary,
+table#thwcfd_checkout_fields thead tr th input[type="submit"].button-primary,
+table#thwcfd_checkout_fields tfoot tr th button.button-primary,
+table#thwcfd_checkout_fields tfoot tr th input[type="submit"].button-primary {
+	background: var(--cf-primary) !important;
+	border-color: var(--cf-primary) !important;
+	color: #ffffff !important;
+	box-shadow: 0 4px 14px rgba(99,102,241,0.30) !important;
+}
+
+.wc-cfm-wrap .button-primary:hover,
+table#thwcfd_checkout_fields thead tr th button.button-primary:hover,
+table#thwcfd_checkout_fields thead tr th input[type="submit"].button-primary:hover {
+	background: var(--cf-primary-hover) !important;
+	border-color: var(--cf-primary-hover) !important;
+	box-shadow: 0 8px 20px rgba(99,102,241,0.35) !important;
+	transform: translateY(-1.5px);
+}
+
+/* ============================================================
+   FIELD ROW CARDS - The main UI
+   ============================================================ */
+table#thwcfd_checkout_fields tbody {
+	gap: 10px !important;
+}
+
+/* Individual card row */
 table#thwcfd_checkout_fields tbody tr {
 	display: flex !important;
 	align-items: center !important;
-	justify-content: space-between !important;
-	background: var(--wc-cfm-bg-card) !important;
-	padding: 16px 24px !important;
-	border-radius: var(--wc-cfm-radius-md) !important;
-	border: 1px solid #f1f5f9 !important;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02) !important;
-	transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+	background: var(--cf-card) !important;
+	padding: 0 20px !important;
+	border-radius: var(--cf-r-md) !important;
+	border: 1.5px solid var(--cf-border) !important;
+	box-shadow: var(--cf-shadow-xs) !important;
+	transition: all 0.22s var(--cf-ease) !important;
 	margin-bottom: 0 !important;
-	position: relative !important;
 	width: auto !important;
+	min-height: 68px;
+	position: relative;
 }
 
 table#thwcfd_checkout_fields tbody tr:hover {
-	border-color: var(--wc-cfm-border-hover) !important;
-	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06) !important;
+	border-color: var(--cf-primary) !important;
+	box-shadow: 0 0 0 3px var(--cf-primary-light), var(--cf-shadow-md) !important;
 	transform: translateY(-2px);
+	background: var(--cf-card-hover) !important;
 }
 
-/* Sort Handle */
+/* Disabled row */
+table#thwcfd_checkout_fields tbody tr.thpladmin-disabled {
+	background: #f9fafb !important;
+	opacity: 0.60 !important;
+}
+
+/* ── DRAG HANDLE ─────────────────────────── */
 table#thwcfd_checkout_fields tbody tr td.sort {
 	cursor: grab !important;
 	display: flex !important;
 	align-items: center !important;
-	width: 25px !important;
-	padding: 0 !important;
+	width: 26px !important;
+	padding: 0 8px 0 0 !important;
 	background: transparent !important;
 	border: none !important;
+	flex-shrink: 0;
 }
 
 table#thwcfd_checkout_fields tbody tr td.sort:before {
-	content: '⋮⋮';
-	font-size: 18px;
-	font-weight: bold;
-	color: var(--wc-cfm-text-muted);
-	opacity: 0.35;
+	content: '⠿';
+	font-size: 17px;
+	color: var(--cf-text-light);
+	opacity: 0.5;
 	transition: opacity 0.2s;
+	letter-spacing: -1px;
 }
 
 table#thwcfd_checkout_fields tbody tr:hover td.sort:before {
-	opacity: 0.9;
+	opacity: 1;
+	color: var(--cf-primary);
 }
 
-/* Select Checkbox */
+/* ── CHECKBOX SELECT ─────────────────────── */
 table#thwcfd_checkout_fields tbody tr td.td_select {
 	display: flex !important;
 	align-items: center !important;
-	width: 30px !important;
-	padding: 0 !important;
+	width: 28px !important;
+	padding: 0 10px 0 0 !important;
 	background: transparent !important;
 	border: none !important;
+	flex-shrink: 0;
 }
 
 table#thwcfd_checkout_fields tbody tr td.td_select input[type="checkbox"] {
 	margin: 0 !important;
-	width: 17px !important;
-	height: 17px !important;
-	border: 1px solid var(--wc-cfm-border) !important;
-	border-radius: 4px !important;
+	width: 16px !important;
+	height: 16px !important;
+	accent-color: var(--cf-primary);
 	cursor: pointer;
+	border-radius: 4px !important;
 }
 
-/* Field Key Details Badge */
-table#thwcfd_checkout_fields tbody tr td.td_name {
+/* ── FIELD LABEL + NAME ───────────────────── */
+table#thwcfd_checkout_fields tbody tr td.td_label {
 	display: flex !important;
-	align-items: center !important;
-	flex: 1.5 !important;
-	min-width: 150px !important;
-	padding: 0 !important;
+	flex-direction: column !important;
+	justify-content: center !important;
+	flex: 2 !important;
+	min-width: 160px !important;
+	padding: 0 16px 0 0 !important;
 	background: transparent !important;
 	border: none !important;
-	font-family: Consolas, Monaco, monospace !important;
-	font-size: 11px !important;
+	gap: 3px;
+}
+
+table#thwcfd_checkout_fields tbody tr td.td_label .field-label-title {
+	font-size: 15px !important;
+	font-weight: 700 !important;
+	color: var(--cf-text) !important;
+	line-height: 1.3;
+}
+
+/* Field key pill inside label column */
+table#thwcfd_checkout_fields tbody tr td.td_label .field-key,
+table#thwcfd_checkout_fields tbody tr td.td_name {
+	display: inline-flex !important;
+	align-items: center !important;
+	background: #f3f4f6 !important;
+	color: #6b7280 !important;
+	font-family: 'Consolas', 'Courier New', monospace !important;
+	font-size: 10px !important;
 	font-weight: 600 !important;
-	color: var(--wc-cfm-text-muted) !important;
+	padding: 2px 8px !important;
+	border-radius: 4px !important;
+	border: none !important;
+	letter-spacing: 0.3px;
+	max-width: fit-content;
 }
 
-table#thwcfd_checkout_fields tbody tr td.td_name:before {
-	content: '';
-	margin-right: 6px;
+table#thwcfd_checkout_fields tbody tr td.td_name {
+	flex: 0 0 auto !important;
+	width: auto !important;
 }
 
-/* Type Pill Tag */
+/* ── TYPE BADGE ──────────────────────────── */
 table#thwcfd_checkout_fields tbody tr td.td_type {
 	display: flex !important;
 	align-items: center !important;
 	justify-content: center !important;
-	flex: 1 !important;
-	min-width: 100px !important;
-	padding: 0 !important;
-	background: transparent !important;
-	border: none !important;
-	text-transform: uppercase !important;
-	font-size: 10px !important;
-	font-weight: 700 !important;
-	color: #64748b !important;
-	letter-spacing: 0.5px !important;
-	background: #f1f5f9 !important;
-	border-radius: 30px !important;
-	height: 24px !important;
-	max-width: 90px !important;
-}
-
-/* Label & Description Column */
-table#thwcfd_checkout_fields tbody tr td.td_label {
-	display: flex !important;
-	flex-direction: column !important;
-	flex: 2 !important;
-	min-width: 180px !important;
-	padding: 0 12px !important;
-	background: transparent !important;
-	border: none !important;
-	font-size: 15px !important;
-	font-weight: 700 !important;
-	color: var(--wc-cfm-text-dark) !important;
-}
-
-/* Placeholder column */
-table#thwcfd_checkout_fields tbody tr td.td_placeholder {
-	display: flex !important;
-	align-items: center !important;
-	flex: 1.5 !important;
-	min-width: 120px !important;
-	padding: 0 !important;
-	background: transparent !important;
-	border: none !important;
-	color: var(--wc-cfm-text-muted) !important;
-	font-size: 13px !important;
-}
-
-table#thwcfd_checkout_fields tbody tr td.td_placeholder:empty:after {
-	content: '—';
-	color: #cbd5e1;
-}
-
-/* Validations column */
-table#thwcfd_checkout_fields tbody tr td.td_validate {
-	display: flex !important;
-	align-items: center !important;
-	flex: 1.2 !important;
-	min-width: 100px !important;
-	padding: 0 !important;
-	background: transparent !important;
-	border: none !important;
-	color: var(--wc-cfm-text-muted) !important;
-	font-size: 12px !important;
-}
-
-table#thwcfd_checkout_fields tbody tr td.td_validate:empty:after {
-	content: '—';
-	color: #cbd5e1;
-}
-
-/* Status Indicators (Required & Enabled) */
-table#thwcfd_checkout_fields tbody tr td.status {
-	display: flex !important;
-	align-items: center !important;
-	justify-content: center !important;
-	width: 90px !important;
-	padding: 0 !important;
+	flex: 0 0 auto !important;
+	padding: 0 16px 0 0 !important;
 	background: transparent !important;
 	border: none !important;
 }
 
-table#thwcfd_checkout_fields tbody tr td.status span.dashicons-yes {
-	color: var(--wc-cfm-success) !important;
-	background: var(--wc-cfm-primary-light) !important;
-	padding: 4px !important;
-	border-radius: 50% !important;
-	font-size: 16px !important;
-	width: 24px !important;
-	height: 24px !important;
+table#thwcfd_checkout_fields tbody tr td.td_type span,
+table#thwcfd_checkout_fields tbody tr td.td_type {
 	display: inline-flex !important;
 	align-items: center !important;
 	justify-content: center !important;
+	background: linear-gradient(135deg, var(--cf-primary-light), rgba(139,92,246,0.10)) !important;
+	color: var(--cf-primary) !important;
+	border: 1px solid rgba(99,102,241,0.20) !important;
+	font-size: 10px !important;
+	font-weight: 700 !important;
+	letter-spacing: 0.8px !important;
+	text-transform: uppercase !important;
+	padding: 4px 12px !important;
+	border-radius: 30px !important;
+	min-width: 68px !important;
+	height: 24px !important;
+	white-space: nowrap !important;
 }
 
-/* Action / Edit Button */
+/* ── WIDTH BADGE ─────────────────────────── */
+table#thwcfd_checkout_fields tbody tr td.td_class {
+	display: flex !important;
+	align-items: center !important;
+	flex: 0 0 auto !important;
+	padding: 0 16px 0 0 !important;
+	background: transparent !important;
+	border: none !important;
+}
+
+table#thwcfd_checkout_fields tbody tr td.td_class span,
+table#thwcfd_checkout_fields tbody tr td.td_class {
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	background: #f3f4f6 !important;
+	color: #374151 !important;
+	border: 1px solid #e5e7eb !important;
+	font-size: 11px !important;
+	font-weight: 600 !important;
+	padding: 4px 12px !important;
+	border-radius: 30px !important;
+	min-width: 80px !important;
+	height: 24px !important;
+	white-space: nowrap !important;
+}
+
+/* ── TOGGLE SWITCHES (Required & Enabled) ─── */
+table#thwcfd_checkout_fields tbody tr td.status {
+	display: flex !important;
+	flex-direction: column !important;
+	align-items: center !important;
+	justify-content: center !important;
+	width: 84px !important;
+	padding: 0 12px 0 0 !important;
+	background: transparent !important;
+	border: none !important;
+	gap: 2px;
+	flex-shrink: 0;
+}
+
+/* Toggle label text */
+table#thwcfd_checkout_fields tbody tr td.status label.status-label {
+	font-size: 9px !important;
+	font-weight: 700 !important;
+	letter-spacing: 0.6px !important;
+	text-transform: uppercase !important;
+	color: var(--cf-text-light) !important;
+	margin-bottom: 4px !important;
+	display: block;
+}
+
+/* Native checkbox → modern toggle pill */
+table#thwcfd_checkout_fields tbody tr td.status .thpladmin-toggle,
+table#thwcfd_checkout_fields tbody tr td.status input[type="checkbox"].thpladmin-toggle {
+	appearance: none !important;
+	-webkit-appearance: none !important;
+	width: 44px !important;
+	height: 24px !important;
+	background: #e5e7eb !important;
+	border-radius: 30px !important;
+	position: relative !important;
+	cursor: pointer !important;
+	transition: background 0.25s var(--cf-ease) !important;
+	border: none !important;
+	outline: none !important;
+	box-shadow: inset 0 1px 3px rgba(0,0,0,0.10) !important;
+	flex-shrink: 0;
+	margin: 0 !important;
+}
+
+table#thwcfd_checkout_fields tbody tr td.status .thpladmin-toggle:checked,
+table#thwcfd_checkout_fields tbody tr td.status input[type="checkbox"].thpladmin-toggle:checked {
+	background: var(--cf-success) !important;
+	box-shadow: 0 2px 8px rgba(34,197,94,0.30) !important;
+}
+
+table#thwcfd_checkout_fields tbody tr td.status .thpladmin-toggle::before,
+table#thwcfd_checkout_fields tbody tr td.status input[type="checkbox"].thpladmin-toggle::before {
+	content: '' !important;
+	position: absolute !important;
+	width: 18px !important;
+	height: 18px !important;
+	background: #ffffff !important;
+	border-radius: 50% !important;
+	top: 3px !important;
+	left: 3px !important;
+	transition: transform 0.25s var(--cf-ease) !important;
+	box-shadow: 0 1px 4px rgba(0,0,0,0.18) !important;
+}
+
+table#thwcfd_checkout_fields tbody tr td.status .thpladmin-toggle:checked::before,
+table#thwcfd_checkout_fields tbody tr td.status input[type="checkbox"].thpladmin-toggle:checked::before {
+	transform: translateX(20px) !important;
+}
+
+/* ── ACTION BUTTONS (Edit / Delete) ─────── */
 table#thwcfd_checkout_fields tbody tr td.action {
 	display: flex !important;
 	align-items: center !important;
 	justify-content: flex-end !important;
-	width: 80px !important;
+	gap: 8px !important;
+	width: 120px !important;
 	padding: 0 !important;
 	background: transparent !important;
 	border: none !important;
+	flex-shrink: 0;
 }
 
-table#thwcfd_checkout_fields tbody tr td.action button.f_edit_btn {
-	height: 32px !important;
-	padding: 0 16px !important;
-	font-family: var(--wc-cfm-font) !important;
+/* Edit button */
+table#thwcfd_checkout_fields tbody tr td.action button.f_edit_btn,
+table#thwcfd_checkout_fields tbody tr td.action .f_edit_btn {
+	height: 34px !important;
+	padding: 0 14px !important;
+	font-family: var(--cf-font) !important;
 	font-size: 12px !important;
 	font-weight: 600 !important;
-	border-radius: var(--wc-cfm-radius-sm) !important;
-	background: #ffffff !important;
-	border: 1px solid var(--wc-cfm-border) !important;
-	color: var(--wc-cfm-primary) !important;
+	border-radius: var(--cf-r-xs) !important;
+	background: var(--cf-primary-light) !important;
+	border: 1.5px solid rgba(99,102,241,0.25) !important;
+	color: var(--cf-primary) !important;
 	box-shadow: none !important;
 	cursor: pointer;
-	transition: all 0.2s ease;
+	transition: all 0.2s var(--cf-ease);
+	text-shadow: none !important;
+	display: inline-flex;
+	align-items: center;
+	gap: 5px;
 }
 
 table#thwcfd_checkout_fields tbody tr td.action button.f_edit_btn:hover {
-	background: var(--wc-cfm-primary-light) !important;
-	border-color: var(--wc-cfm-primary) !important;
+	background: var(--cf-primary) !important;
+	border-color: var(--cf-primary) !important;
+	color: #ffffff !important;
+	box-shadow: 0 4px 12px rgba(99,102,241,0.30) !important;
+	transform: translateY(-1px);
 }
 
-/* Disabled Row design */
-table#thwcfd_checkout_fields tbody tr.thpladmin-disabled {
-	background: #f8fafc !important;
-	opacity: 0.65 !important;
+/* Delete button */
+table#thwcfd_checkout_fields tbody tr td.action button.f_delete_btn,
+table#thwcfd_checkout_fields tbody tr td.action .f_delete_btn {
+	height: 34px !important;
+	padding: 0 12px !important;
+	font-family: var(--cf-font) !important;
+	font-size: 12px !important;
+	font-weight: 600 !important;
+	border-radius: var(--cf-r-xs) !important;
+	background: transparent !important;
+	border: 1.5px solid var(--cf-border) !important;
+	color: var(--cf-text-muted) !important;
+	box-shadow: none !important;
+	cursor: pointer;
+	transition: all 0.2s var(--cf-ease);
+	text-shadow: none !important;
+	display: inline-flex;
+	align-items: center;
 }
 
-/* Modal form popup restyling to match clean dialog styling */
-.ui-dialog {
-	font-family: var(--wc-cfm-font) !important;
-	border-radius: var(--wc-cfm-radius-lg) !important;
-	border: 1px solid var(--wc-cfm-border) !important;
-	box-shadow: var(--wc-cfm-shadow-xl) !important;
-	padding: 0 !important;
+table#thwcfd_checkout_fields tbody tr td.action button.f_delete_btn:hover {
+	background: var(--cf-danger-bg) !important;
+	border-color: var(--cf-danger) !important;
+	color: var(--cf-danger) !important;
+	transform: translateY(-1px);
+}
+
+/* ============================================================
+   BULK ACTION SELECT & OTHER FORM CONTROLS
+   ============================================================ */
+.wc-cfm-wrap select,
+.wc-cfm-wrap input[type="text"],
+.wc-cfm-wrap input[type="search"] {
+	font-family: var(--cf-font) !important;
+	border: 1.5px solid var(--cf-border) !important;
+	border-radius: var(--cf-r-xs) !important;
+	padding: 8px 12px !important;
+	font-size: 13px !important;
+	color: var(--cf-text) !important;
+	height: 38px !important;
+	transition: border-color 0.2s var(--cf-ease) !important;
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+.wc-cfm-wrap select:focus,
+.wc-cfm-wrap input[type="text"]:focus {
+	border-color: var(--cf-primary) !important;
+	box-shadow: 0 0 0 3px var(--cf-primary-light) !important;
+}
+
+/* ============================================================
+   MODAL / POPUP FORM
+   ============================================================ */
+#thwcfd_field_form_pp,
+.thpladmin-modal-mask {
+	backdrop-filter: blur(4px) !important;
+	background: rgba(15, 23, 42, 0.45) !important;
+}
+
+.thpladmin-modal {
+	background: var(--cf-card) !important;
+	border-radius: var(--cf-r-xl) !important;
+	border: 1px solid var(--cf-border) !important;
+	box-shadow: var(--cf-shadow-lg) !important;
 	overflow: hidden !important;
 }
 
-.ui-dialog-titlebar {
-	background: #f8fafc !important;
-	border-bottom: 1px solid var(--wc-cfm-border) !important;
-	padding: 16px 24px !important;
-	font-size: 16px !important;
-	font-weight: 700 !important;
-	color: var(--wc-cfm-text-dark) !important;
+.modal-container {
+	border-radius: var(--cf-r-xl) !important;
 }
 
-.ui-dialog-titlebar-close {
+.modal-content {
+	font-family: var(--cf-font) !important;
+}
+
+.modal-close {
+	background: #f3f4f6 !important;
+	border-radius: 50% !important;
+	width: 32px !important;
+	height: 32px !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	font-size: 20px !important;
+	color: var(--cf-text-muted) !important;
+	transition: all 0.2s var(--cf-ease) !important;
+	line-height: 1 !important;
+}
+
+.modal-close:hover {
+	background: var(--cf-danger-bg) !important;
+	color: var(--cf-danger) !important;
+}
+
+/* Modal form wizard aside (step list) */
+.form-wizard aside {
+	background: #f9fafb !important;
+	border-right: 1px solid var(--cf-border) !important;
+}
+
+/* Modal form inputs */
+.thpladmin-modal input[type="text"],
+.thpladmin-modal input[type="number"],
+.thpladmin-modal input[type="email"],
+.thpladmin-modal textarea,
+.thpladmin-modal select {
+	font-family: var(--cf-font) !important;
+	border: 1.5px solid var(--cf-border) !important;
+	border-radius: var(--cf-r-xs) !important;
+	padding: 9px 12px !important;
+	font-size: 13px !important;
+	color: var(--cf-text) !important;
+	transition: border-color 0.2s, box-shadow 0.2s !important;
+	width: 100% !important;
+	box-sizing: border-box !important;
+}
+
+.thpladmin-modal input[type="text"]:focus,
+.thpladmin-modal textarea:focus,
+.thpladmin-modal select:focus {
+	border-color: var(--cf-primary) !important;
+	box-shadow: 0 0 0 3px var(--cf-primary-light) !important;
+	outline: none !important;
+}
+
+/* Modal save button */
+.thpladmin-modal .button-primary {
+	background: var(--cf-primary) !important;
+	border-color: var(--cf-primary) !important;
+	border-radius: var(--cf-r-sm) !important;
+	box-shadow: 0 4px 14px rgba(99,102,241,0.30) !important;
+	color: #fff !important;
+	font-weight: 700 !important;
+}
+
+/* ============================================================
+   MISC
+   ============================================================ */
+
+/* WP footer hide */
+#wpfooter { display: none !important; }
+
+/* Notice boxes */
+.notice.thwcfd-notice,
+.thwcfd-wrap .notice {
+	border-left: 4px solid var(--cf-primary) !important;
+	border-radius: 0 var(--cf-r-xs) var(--cf-r-xs) 0 !important;
+	font-family: var(--cf-font) !important;
+}
+
+/* Themehigh logo in header → hide */
+.thwcfd-themehigh-logo,
+.thwcfd-header img[alt*="Themehigh"],
+.thwcfd-header img[alt*="themehigh"] {
 	display: none !important;
 }
 
-.ui-dialog-buttonpane {
-	background: #f8fafc !important;
-	border-top: 1px solid var(--wc-cfm-border) !important;
-	padding: 12px 24px !important;
-}
-
-/* WP Admin footer cleanup */
-#wpfooter {
-	display: none !important; /* Hide footer to prevent overlaps on this page */
-}
+/* ── SCROLLBAR styling ── */
+.thwcfd-wrap ::-webkit-scrollbar { width: 6px; height: 6px; }
+.thwcfd-wrap ::-webkit-scrollbar-track { background: transparent; }
+.thwcfd-wrap ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 8px; }
+.thwcfd-wrap ::-webkit-scrollbar-thumb:hover { background: var(--cf-primary); }
