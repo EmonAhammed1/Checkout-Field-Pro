@@ -3,7 +3,7 @@
  * Plugin Name: Checkout Field by Emon
  * Description: Dynamically manage WooCommerce checkout fields. Created by Emon.
  * Author:      Emon
- * Version:     1.0.3
+ * Version:     1.0.4
  * Author URI:  #
  * Plugin URI:  #
  * License:     GPLv2 or later
@@ -26,7 +26,7 @@ if (!function_exists('is_woocommerce_active')){
 }
 
 if(is_woocommerce_active()) {
-	define('THWCFD_VERSION', '1.0.3');
+	define('THWCFD_VERSION', '1.0.4');
 	!defined('THWCFD_BASE_NAME') && define('THWCFD_BASE_NAME', plugin_basename( __FILE__ ));
 	!defined('THWCFD_PATH') && define('THWCFD_PATH', plugin_dir_path( __FILE__ ));
 	!defined('THWCFD_URL') && define('THWCFD_URL', plugins_url( '/', __FILE__ ));
