@@ -1,8 +1,8 @@
-<?php
+﻿<?php
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://themehigh.com
+ * @link       https://emon.com
  *
  * @package    woo-checkout-field-editor-pro
  * @subpackage woo-checkout-field-editor-pro/admin
@@ -127,7 +127,7 @@ class THWCFD_Admin {
 		<div id="th_block_warning" class="th-block-warning-msg">
             <div class="th-warning-message-panel__text th-warning-message-panel__text--center">
                 <div class = "th-warning-img">
-					<img src="<?php echo esc_url(THWCFD_URL .'admin/assets/images/logo.svg'); ?>" alt="Themehigh Logo" />
+					<img src="<?php echo esc_url(THWCFD_URL .'admin/assets/images/logo.svg'); ?>" alt="Emon Logo" />
 				</div>
 				<div class="th-warning">
              	
@@ -139,7 +139,7 @@ class THWCFD_Admin {
 							esc_html__("Our Checkout Field Editor now supports WooCommerce Checkout Blocks!
 							If you're using Block Checkout, make sure to switch to the Block Checkout Fields tab, otherwise, your changes won’t be reflected. Have questions or need help? 
 							Reach out to our  %s .", 'woo-checkout-field-editor-pro'),
-							'<a href="https://www.themehigh.com/docs/support/" target="_blank" class="quick-widget-support-link">' . esc_html__(' Support team', 'woo-checkout-field-editor-pro') . '</a>'
+							'<a href="https://www.emon.com/docs/support/" target="_blank" class="quick-widget-support-link">' . esc_html__(' Support team', 'woo-checkout-field-editor-pro') . '</a>'
 						);
        				?>
 					</span>
@@ -304,7 +304,7 @@ class THWCFD_Admin {
 			    font-size: 16px;
 			}
 
-			.thwcfd-themehigh-logo {
+			.thwcfd-emon-logo {
 			    width: 2.4rem;
 			    height: 2.4rem;
 			}
@@ -382,7 +382,7 @@ class THWCFD_Admin {
 			        padding: 1.5rem;
 			    }
 
-			    .thwcfd-themehigh-logo {
+			    .thwcfd-emon-logo {
 			        width: 2.4rem;
 			        height: 2.4rem;
 			    }
@@ -430,7 +430,7 @@ class THWCFD_Admin {
 		?>
 		<div class="notice notice-info thpladmin-notice thwcfd-review-wrapper "  data-nonce="<?php echo esc_attr(wp_create_nonce( 'thwcfd_notice_security')); ?>">
       	   <div class="thwcfd-custom-background thwcfd-content">
-       		<img src="<?php echo esc_url(THWCFD_URL .'admin/assets/images/logo.svg'); ?>" alt="Themehigh Logo" class="thwcfd-themehigh-logo" />
+       		<img src="<?php echo esc_url(THWCFD_URL .'admin/assets/images/logo.svg'); ?>" alt="Emon Logo" class="thwcfd-emon-logo" />
         	<div class="thwcfd-main-content-wrapper">
           		<h1>Redefining your checkout pages with our plugin?</h1>
           		<div class="thwcfd-sub-content-wrapper">
@@ -461,7 +461,7 @@ class THWCFD_Admin {
 				</a>
         	</div>
         	<div class="thwcfd-banner">
-          		<h1>Checkout field editor </br>by <span>themehigh</span></h1>
+          		<h1>Checkout field editor </br>by <span>emon</span></h1>
         	</div>
         	<div class="thwcfd-close">
           		<a href="<?php echo esc_url($dismiss_url); ?>"><img src="<?php echo esc_url(THWCFD_URL .'admin/assets/images/close-dark.png'); ?>" alt="Close" /></a>
@@ -511,7 +511,7 @@ class THWCFD_Admin {
 		$admin_url  = 'admin.php?page=checkout_form_designer';
         $dismiss_url = $admin_url . '&thwcfd_discount_popup_dismiss=true&thwcfd_discount_popup_nonce=' . wp_create_nonce( 'thwcfd_discount_popup_security');
 
-		$url = "https://www.themehigh.com/?edd_action=add_to_cart&download_id=12&cp=lyCDSy&utm_source=wcfe_free&utm_medium=referral&utm_campaign=wcfe_premium_tab_upgrade_link";
+		$url = "https://www.emon.com/?edd_action=add_to_cart&download_id=12&cp=lyCDSy&utm_source=wcfe_free&utm_medium=referral&utm_campaign=wcfe_premium_tab_upgrade_link";
 
 		$current_page = isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash($_GET['page']))  : '';
 		
@@ -586,7 +586,7 @@ class THWCFD_Admin {
             		</div>
             		<!--------------------------Whidget heading section ---------------------------->
             		<div class="th_quick_widget_heading">
-						<div class="th_whead_t1"><p>Welcome, we're</p><p><b style="font-size: 28px;">ThemeHigh</b></p></div>
+						<div class="th_whead_t1"><p>Welcome, we're</p><p><b style="font-size: 28px;">Emon</b></p></div>
                 		</div>
         			</div>
         			<!-- --------------------Widget Body--------------------------------------- -->
@@ -613,7 +613,7 @@ class THWCFD_Admin {
 										<path d="M7.50435 12.0001C5.81732 12.0001 4.12559 12.0001 2.43856 12.0001C2.10491 12.0001 1.87935 11.8454 1.83235 11.5848C1.77596 11.2976 1.98743 11.0281 2.29758 10.9927C2.35397 10.9839 2.41506 10.9839 2.47145 10.9839C5.82671 10.9839 9.17728 10.9839 12.5325 10.9839C12.8991 10.9839 13.1246 11.1297 13.1763 11.3992C13.2327 11.6952 13.0119 11.9692 12.6923 11.9912C12.6218 11.9957 12.5513 11.9957 12.4809 11.9957C10.822 12.0001 9.16318 12.0001 7.50435 12.0001Z" fill="#FFB743"/>
 									</svg>
                     			</div>
-                    			<a href="https://www.themehigh.com/product/woocommerce-checkout-field-editor-pro/?utm_source=wcfe_free&utm_medium=referral&utm_campaign=wcfe_settings_upgrade_link" target="_blank" class="quick-widget-doc-link">Upgrade to Premium</a></li>
+                    			<a href="https://www.emon.com/product/woocommerce-checkout-field-editor-pro/?utm_source=wcfe_free&utm_medium=referral&utm_campaign=wcfe_settings_upgrade_link" target="_blank" class="quick-widget-doc-link">Upgrade to Premium</a></li>
                			 	<li>
 
                			 	<div class="list_icon" style="background-color: rgba(5, 15, 250, 0.15);">

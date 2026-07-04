@@ -1,4 +1,4 @@
-# Copyright (C) 2026 ThemeHigh
+﻿# Copyright (C) 2026 Emon
 # This file is distributed under the GPLv2 or later.
 msgid ""
 msgstr ""
@@ -22,7 +22,7 @@ msgstr ""
 #. Plugin URI of the plugin
 #. Author URI of the plugin
 #: checkout-form-designer.php
-msgid "https://www.themehigh.com"
+msgid "https://www.emon.com"
 msgstr ""
 
 #. Description of the plugin
@@ -32,7 +32,7 @@ msgstr ""
 
 #. Author of the plugin
 #: checkout-form-designer.php
-msgid "ThemeHigh"
+msgid "Emon"
 msgstr ""
 
 #: admin/class-thwcfd-admin-form-block-field.php:404
@@ -466,23 +466,23 @@ msgstr ""
 msgid "Your changes were not saved due to an error."
 msgstr ""
 
-#: admin/class-thwcfd-admin-settings-themehigh-plugins.php:146
+#: admin/class-thwcfd-admin-settings-emon-plugins.php:146
 msgid "Compatible Plugins"
 msgstr ""
 
-#: admin/class-thwcfd-admin-settings-themehigh-plugins.php:184
+#: admin/class-thwcfd-admin-settings-emon-plugins.php:184
 msgid "Other Plugins"
 msgstr ""
 
-#: admin/class-thwcfd-admin-settings-themehigh-plugins.php:233
+#: admin/class-thwcfd-admin-settings-emon-plugins.php:233
 msgid "Activated"
 msgstr ""
 
-#: admin/class-thwcfd-admin-settings-themehigh-plugins.php:246
+#: admin/class-thwcfd-admin-settings-emon-plugins.php:246
 msgid "Activate"
 msgstr ""
 
-#: admin/class-thwcfd-admin-settings-themehigh-plugins.php:267
+#: admin/class-thwcfd-admin-settings-emon-plugins.php:267
 msgid "Install now"
 msgstr ""
 

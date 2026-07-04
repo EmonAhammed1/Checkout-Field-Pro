@@ -1,8 +1,8 @@
-<?php
+﻿<?php
 /**
  * The file that defines the core plugin class.
  *
- * @link       https://themehigh.com
+ * @link       https://emon.com
  * @since      2.1.0
  *
  * @package    woo-checkout-field-editor-pro

@@ -1,8 +1,8 @@
-<?php
+﻿<?php
 /**
  * The common utility functionalities for the plugin.
  *
- * @link       https://themehigh.com
+ * @link       https://emon.com
  * @since      1.5.0
  *
  * @package    woo-checkout-field-editor-pro

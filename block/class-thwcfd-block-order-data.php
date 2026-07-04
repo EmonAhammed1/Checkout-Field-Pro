@@ -1,7 +1,7 @@
-<?php
+﻿<?php
 /**
  *
- * @link       https://themehigh.com
+ * @link       https://emon.com
  * @since      2.1.0
  *
  * @package    woo-checkout-field-editor-pro

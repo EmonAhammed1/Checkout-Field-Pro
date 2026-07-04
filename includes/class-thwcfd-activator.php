@@ -1,8 +1,8 @@
-<?php
+﻿<?php
 /**
  * Fired during plugin activation.
  *
- * @link       https://themehigh.com
+ * @link       https://emon.com
  * @since      2.9.0
  *
  * @package    woocommerce-checkout-field-editor-pro

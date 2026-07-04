@@ -1,8 +1,8 @@
-<?php
+﻿<?php
 /**
  * Checkout Field - Checkbox
  *
- * @author      ThemeHiGH
+ * @author      Emon
  * @category    Admin
  */
 

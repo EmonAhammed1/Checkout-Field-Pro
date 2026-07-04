@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Checkout Field by Emon - Admin Custom Stylesheet
  * Premium Modern UI - v2.0
  */
@@ -945,10 +945,10 @@ table#thwcfd_checkout_fields tbody tr td.td_actions span.disabled {
 	font-family: var(--cf-font) !important;
 }
 
-/* Themehigh logo in header → hide */
-.thwcfd-themehigh-logo,
-.thwcfd-header img[alt*="Themehigh"],
-.thwcfd-header img[alt*="themehigh"] {
+/* Emon logo in header → hide */
+.thwcfd-Emon-logo,
+.thwcfd-header img[alt*="Emon"],
+.thwcfd-header img[alt*="Emon"] {
 	display: none !important;
 }
 

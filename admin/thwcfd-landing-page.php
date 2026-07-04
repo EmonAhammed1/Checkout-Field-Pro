@@ -1,8 +1,8 @@
-<?php
+﻿<?php
 /**
  * Admin Base HTML.
  *
- * @package Themehigh\\admin
+ * @package Emon\\admin
  */
 
 // Exit if accessed directly.
@@ -49,7 +49,7 @@ set_current_screen();
 					<!-- <button>
 					<?php //esc_html_e("Read More!", 'woo-checkout-field-editor-pro' ); ?>
 					</button> -->
-					<a href="https://www.themehigh.com/docs/classic-vs-block-checkout/" target="_blank" rel="noopener noreferrer">
+					<a href="https://www.emon.com/docs/classic-vs-block-checkout/" target="_blank" rel="noopener noreferrer">
 						<button type="button">
 							<?php esc_html_e("Read More!", 'woo-checkout-field-editor-pro' ); ?>
 						</button>

@@ -1,8 +1,8 @@
-<?php
+﻿<?php
 /**
  * The admin settings page functionality of the plugin.
  *
- * @link       https://themehigh.com
+ * @link       https://emon.com
  *
  * @package    woo-checkout-field-editor-pro
  * @subpackage woo-checkout-field-editor-pro/admin

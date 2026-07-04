@@ -1,8 +1,8 @@
-<?php
+﻿<?php
 /**
  * Auto-loads the required dependencies for this plugin.
  *
- * @link       https://themehigh.com
+ * @link       https://emon.com
  * @since      1.5.0
  *
  * @package    woo-checkout-field-editor-pro

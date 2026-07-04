@@ -1,8 +1,8 @@
-<?php
+﻿<?php
 /**
  * Woo Checkout Field Editor Public
  *
- * @link       https://themehigh.com
+ * @link       https://emon.com
  * @since      1.3.6
  *
  * @package    woo-checkout-field-editor-pro

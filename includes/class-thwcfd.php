@@ -1,8 +1,8 @@
-<?php
+﻿<?php
 /**
  * The file that defines the core plugin class.
  *
- * @link       https://themehigh.com
+ * @link       https://emon.com
  * @since      1.5.0
  *
  * @package    woo-checkout-field-editor-pro
@@ -163,13 +163,13 @@ class THWCFD {
                     <div class="modal-content">
                         <div class="modal-body">
                             <div class="model-header">
-                                <img class="th-logo" src="<?php echo esc_url(THWCFD_URL .'admin/assets/images/min-logo.svg'); ?>" alt="themehigh-logo">
+                                <img class="th-logo" src="<?php echo esc_url(THWCFD_URL .'admin/assets/images/min-logo.svg'); ?>" alt="emon-logo">
                                 <span><?php esc_html_e('Quick Feedback', 'woo-checkout-field-editor-pro'); ?></span>
                             </div>
 
                             <!-- <div class="get-support-version-b">
                                 <p>We are sad to see you go. We would be happy to fix things for you. Please raise a ticket to get help</p>
-                                <a class="thwcfd-link thwcfd-right-link thwcfd-active" target="_blank" href="https://help.themehigh.com/hc/en-us/requests/new?utm_source=wcfe_free&utm_medium=feedback_form&utm_campaign=get_support"><?php esc_html_e('Get Support', 'woo-checkout-field-editor-pro'); ?></a>
+                                <a class="thwcfd-link thwcfd-right-link thwcfd-active" target="_blank" href="https://help.emon.com/hc/en-us/requests/new?utm_source=wcfe_free&utm_medium=feedback_form&utm_campaign=get_support"><?php esc_html_e('Get Support', 'woo-checkout-field-editor-pro'); ?></a>
                             </div> -->
 
                             <main class="form-container main-full">
@@ -192,7 +192,7 @@ class THWCFD {
                                     }
                                     ?>
                                 </ul>
-                                <p class="thwcfd-privacy-cnt"><?php esc_html_e('This form is only for getting your valuable feedback. We do not collect your personal data. To know more read our ', 'woo-checkout-field-editor-pro'); ?> <a class="thwcfd-privacy-link" target="_blank" href="<?php echo esc_url('https://www.themehigh.com/privacy-policy/');?>"><?php esc_html_e('Privacy Policy', 'woo-checkout-field-editor-pro'); ?></a></p>
+                                <p class="thwcfd-privacy-cnt"><?php esc_html_e('This form is only for getting your valuable feedback. We do not collect your personal data. To know more read our ', 'woo-checkout-field-editor-pro'); ?> <a class="thwcfd-privacy-link" target="_blank" href="<?php echo esc_url('https://www.emon.com/privacy-policy/');?>"><?php esc_html_e('Privacy Policy', 'woo-checkout-field-editor-pro'); ?></a></p>
                             </main>
                             <footer class="modal-footer">
                                 <div class="thwcfd-left">
@@ -200,7 +200,7 @@ class THWCFD {
                                 </div>
                                 <div class="thwcfd-right">
                                     
-                                    <a class="thwcfd-link thwcfd-right-link thwcfd-active" target="_blank" href="https://help.themehigh.com/hc/en-us/requests/new?utm_source=wcfe_free&utm_medium=feedback_form&utm_campaign=get_support"><?php esc_html_e('Get Support', 'woo-checkout-field-editor-pro'); ?></a>
+                                    <a class="thwcfd-link thwcfd-right-link thwcfd-active" target="_blank" href="https://help.emon.com/hc/en-us/requests/new?utm_source=wcfe_free&utm_medium=feedback_form&utm_campaign=get_support"><?php esc_html_e('Get Support', 'woo-checkout-field-editor-pro'); ?></a>
 
                                     <a class="thwcfd-link thwcfd-right-link thwcfd-active thwcfd-submit-deactivate" href="#"><?php esc_html_e('Submit and Deactivate', 'woo-checkout-field-editor-pro'); ?></a>
                                     <a class="thwcfd-link thwcfd-right-link thwcfd-close" href="#"><?php esc_html_e('Cancel', 'woo-checkout-field-editor-pro'); ?></a>
