@@ -2,7 +2,7 @@
 /**
  * Woo Checkout Field Editor Public
  *
- * @link       https://emon.com
+ * @link       https://github.com/EmonAhammed1/Checkout-Field-Pro
  * @since      1.3.6
  *
  * @package    woo-checkout-field-editor-pro

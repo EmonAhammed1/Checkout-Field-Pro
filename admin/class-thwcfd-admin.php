@@ -2,7 +2,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://emon.com
+ * @link       https://github.com/EmonAhammed1/Checkout-Field-Pro
  *
  * @package    woo-checkout-field-editor-pro
  * @subpackage woo-checkout-field-editor-pro/admin
@@ -139,7 +139,7 @@ class THWCFD_Admin {
 							esc_html__("Our Checkout Field Editor now supports WooCommerce Checkout Blocks!
 							If you're using Block Checkout, make sure to switch to the Block Checkout Fields tab, otherwise, your changes won’t be reflected. Have questions or need help? 
 							Reach out to our  %s .", 'woo-checkout-field-editor-pro'),
-							'<a href="https://www.emon.com/docs/support/" target="_blank" class="quick-widget-support-link">' . esc_html__(' Support team', 'woo-checkout-field-editor-pro') . '</a>'
+							'<a href="#" target="_blank" class="quick-widget-support-link">' . esc_html__(' Support team', 'woo-checkout-field-editor-pro') . '</a>'
 						);
        				?>
 					</span>
@@ -511,7 +511,7 @@ class THWCFD_Admin {
 		$admin_url  = 'admin.php?page=checkout_form_designer';
         $dismiss_url = $admin_url . '&thwcfd_discount_popup_dismiss=true&thwcfd_discount_popup_nonce=' . wp_create_nonce( 'thwcfd_discount_popup_security');
 
-		$url = "https://www.emon.com/?edd_action=add_to_cart&download_id=12&cp=lyCDSy&utm_source=wcfe_free&utm_medium=referral&utm_campaign=wcfe_premium_tab_upgrade_link";
+		$url = "#";
 
 		$current_page = isset( $_GET['page'] ) ? sanitize_text_field( wp_unslash($_GET['page']))  : '';
 		
@@ -605,7 +605,7 @@ class THWCFD_Admin {
 									</svg>
 
                     			</div>
-                    			<a href="https://app.loopedin.io/checkout-field-editor-for-woocommerce/boards" target="_blank" class="quick-widget-doc-link">Request a feature</a></li>
+                    			<a href="#" target="_blank" class="quick-widget-doc-link">Request a feature</a></li>
                			 	<li>
                			 		<div class="list_icon" style="background-color: rgba(255, 183, 67, 0.15);">
         							<svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -613,7 +613,7 @@ class THWCFD_Admin {
 										<path d="M7.50435 12.0001C5.81732 12.0001 4.12559 12.0001 2.43856 12.0001C2.10491 12.0001 1.87935 11.8454 1.83235 11.5848C1.77596 11.2976 1.98743 11.0281 2.29758 10.9927C2.35397 10.9839 2.41506 10.9839 2.47145 10.9839C5.82671 10.9839 9.17728 10.9839 12.5325 10.9839C12.8991 10.9839 13.1246 11.1297 13.1763 11.3992C13.2327 11.6952 13.0119 11.9692 12.6923 11.9912C12.6218 11.9957 12.5513 11.9957 12.4809 11.9957C10.822 12.0001 9.16318 12.0001 7.50435 12.0001Z" fill="#FFB743"/>
 									</svg>
                     			</div>
-                    			<a href="https://www.emon.com/product/woocommerce-checkout-field-editor-pro/?utm_source=wcfe_free&utm_medium=referral&utm_campaign=wcfe_settings_upgrade_link" target="_blank" class="quick-widget-doc-link">Upgrade to Premium</a></li>
+                    			<a href="#" target="_blank" class="quick-widget-doc-link">Upgrade to Premium</a></li>
                			 	<li>
 
                			 	<div class="list_icon" style="background-color: rgba(5, 15, 250, 0.15);">
@@ -623,7 +623,7 @@ class THWCFD_Admin {
 				                    fill="#0060FE"
 				                  />
 				              	</svg>
-				          	</div><a href="https://www.facebook.com/groups/740534523911091" target="_blank" class="quick-widget-community-link">Join our Community</a></li>
+				          	</div><a href="#" target="_blank" class="quick-widget-community-link">Join our Community</a></li>
 				          	<li>
 				          		<div class="list_icon" style="background-color: rgba(152, 190, 0, 0.15);">
 				          			<svg width="15" height="13" viewBox="0 0 15 13" fill="none" xmlns="http://www.w3.org/2000/svg">

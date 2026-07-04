@@ -2,7 +2,7 @@
 /**
  * The admin settings page functionality of the plugin.
  *
- * @link       https://emon.com
+ * @link       https://github.com/EmonAhammed1/Checkout-Field-Pro
  *
  * @package    woo-checkout-field-editor-pro
  * @subpackage woo-checkout-field-editor-pro/admin

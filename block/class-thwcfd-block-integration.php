@@ -2,7 +2,7 @@
 /**
  * The file that defines the core plugin class.
  *
- * @link       https://emon.com
+ * @link       https://github.com/EmonAhammed1/Checkout-Field-Pro
  * @since      2.1.0
  *
  * @package    woo-checkout-field-editor-pro

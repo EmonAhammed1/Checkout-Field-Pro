@@ -2,7 +2,7 @@
 /**
  * Auto-loads the required dependencies for this plugin.
  *
- * @link       https://emon.com
+ * @link       https://github.com/EmonAhammed1/Checkout-Field-Pro
  * @since      1.5.0
  *
  * @package    woo-checkout-field-editor-pro

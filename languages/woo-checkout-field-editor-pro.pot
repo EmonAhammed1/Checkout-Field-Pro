@@ -22,7 +22,7 @@ msgstr ""
 #. Plugin URI of the plugin
 #. Author URI of the plugin
 #: checkout-form-designer.php
-msgid "https://www.emon.com"
+msgid "https://github.com/EmonAhammed1/Checkout-Field-Pro"
 msgstr ""
 
 #. Description of the plugin

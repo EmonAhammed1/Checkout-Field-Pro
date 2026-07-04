@@ -2,7 +2,7 @@
 /**
  * The checkout sections specific functionality for the plugin.
  *
- * @link       https://emon.com
+ * @link       https://github.com/EmonAhammed1/Checkout-Field-Pro
  * @since      2.9.0
  *
  * @package    woocommerce-checkout-field-editor-pro
