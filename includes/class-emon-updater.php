@@ -13,6 +13,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+if ( ! function_exists( 'debugPrint' ) ) {
+	function debugPrint( $message ) {
+		if ( WP_DEBUG === true ) {
+			error_log( '[Emon Debug] ' . print_r( $message, true ) );
+		}
+	}
+}
+
 if ( ! class_exists( 'Emon_Plugin_Updater' ) ) :
 
 class Emon_Plugin_Updater {
