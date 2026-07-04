@@ -85,8 +85,18 @@ class Emon_Plugin_Updater {
 		// Try transient cache first
 		$cached = get_transient( $this->transient_key );
 		if ( $cached !== false ) {
-			$this->github_data = $cached;
-			return $this->github_data;
+			// If on Plugins page or our Settings page, check if cache is older than 5 minutes (300 seconds)
+			$current_uri = isset( $_SERVER['REQUEST_URI'] ) ? $_SERVER['REQUEST_URI'] : '';
+			$is_admin_screen = strpos( $current_uri, 'plugins.php' ) !== false || strpos( $current_uri, 'checkout_form_designer' ) !== false;
+			$fetched_at = isset( $cached->emon_fetched_at ) ? $cached->emon_fetched_at : 0;
+
+			if ( $is_admin_screen && ( time() - $fetched_at > 300 ) ) {
+				delete_transient( $this->transient_key );
+				debugPrint( '[Emon Updater] Admin screen cache bypass: cache is older than 5 minutes.' );
+			} else {
+				$this->github_data = $cached;
+				return $this->github_data;
+			}
 		}
 
 		$api_url  = sprintf(
@@ -128,6 +138,9 @@ class Emon_Plugin_Updater {
 		}
 
 		debugPrint( '[Emon Updater] Latest release: ' . $release->tag_name );
+
+		// Set custom fetch timestamp
+		$release->emon_fetched_at = time();
 
 		// Cache for 6 hours
 		set_transient( $this->transient_key, $release, 6 * HOUR_IN_SECONDS );
