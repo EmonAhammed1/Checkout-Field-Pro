@@ -446,7 +446,7 @@ class THWCFD {
                 /*
                 popup.on('click', '.thwcfd-review-and-deactivate', function () {
                     e.preventDefault();
-                    window.open("https://wordpress.org/support/plugin/woo-checkout-field-editor-pro/reviews/?rate=5#new-post");
+                    window.open("https://wordpress.org/support/plugin/checkout-field-by-emon/reviews/?rate=5#new-post");
                     console.log(deactivation_link);
                     window.location.href = deactivation_link;
                 });

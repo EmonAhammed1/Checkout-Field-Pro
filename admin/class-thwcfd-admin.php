@@ -447,7 +447,7 @@ class THWCFD_Admin {
           		</div>
         	</div>
         	<div class="thwcfd-buttons action-row">
-			<a class="thwcfd-notice-action thwcfd-yes" onclick="window.open('<?php echo esc_url( 'https://wordpress.org/support/plugin/woo-checkout-field-editor-pro/reviews/?rate=5#new-post' ); ?>', '_blank')">
+			<a class="thwcfd-notice-action thwcfd-yes" onclick="window.open('<?php echo esc_url( 'https://wordpress.org/support/plugin/checkout-field-by-emon/reviews/?rate=5#new-post' ); ?>', '_blank')">
           			Yes, Today
 				</a>
 				<a class="thwcfd-notice-action thwcfd-remind" href="<?php echo esc_url($remind_url); ?>" >
@@ -633,7 +633,7 @@ class THWCFD_Admin {
 				          				<path d="M12.2749 7.63037C12.3249 7.65631 12.4331 7.68596 12.5045 7.75379C12.792 8.02657 13.0712 8.30973 13.3475 8.59288C13.3869 8.63063 13.4182 8.67589 13.4398 8.72599C13.4613 8.77608 13.4726 8.82999 13.4729 8.88452C13.4733 8.93906 13.4627 8.9931 13.4418 9.04347C13.4209 9.09383 13.3901 9.13949 13.3512 9.17773C13.1872 9.34414 12.9327 9.34599 12.7564 9.17328C12.4764 8.89902 12.1995 8.62179 11.9256 8.3416C11.8643 8.28409 11.823 8.20852 11.8075 8.12588C11.7921 8.04324 11.8033 7.95782 11.8397 7.88202C11.9093 7.71561 12.0434 7.64149 12.2749 7.63037Z" fill="#98BE00"/>
 				          			</svg>
 
-		              			</div><a href="https://wordpress.org/support/plugin/woo-checkout-field-editor-pro/" target="_blank" class="quick-widget-support-link">Get support</a></li>
+		              			</div><a href="https://wordpress.org/support/plugin/checkout-field-by-emon/" target="_blank" class="quick-widget-support-link">Get support</a></li>
 		          
 			            	<li>
 		              			<div class="list_icon" style="background-color: rgba(255, 0, 0, 0.15);">
@@ -645,7 +645,7 @@ class THWCFD_Admin {
 									</svg>
 
 			            		</div>
-			            	<a href="https://wordpress.org/support/plugin/woo-checkout-field-editor-pro/reviews/?rate=5#new-post" target="_blank" class="quick-widget-youtube-link" >Review Us</a></li>
+			            	<a href="https://wordpress.org/support/plugin/checkout-field-by-emon/reviews/?rate=5#new-post" target="_blank" class="quick-widget-youtube-link" >Review Us</a></li>
 			       	 	</ul>
 			   		</div>
 				</div>

@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Checkout Field Editor for WooCommerce 2.1.9\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/woo-checkout-field-editor-pro\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/checkout-field-by-emon\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
