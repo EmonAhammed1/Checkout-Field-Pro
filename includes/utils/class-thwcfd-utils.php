@@ -467,6 +467,11 @@ class THWCFD_Utils {
 			'label' => array(
 				'for' => array(),
 				'style' => array(),
+				'class' => array(),
+			),
+			'span' => array(
+				'class' => array(),
+				'style' => array(),
 			),
 			'textarea' => array(
 				'name' => array(),
