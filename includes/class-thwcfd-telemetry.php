@@ -78,22 +78,40 @@ class THWCFD_Telemetry {
 	private function send_ping( $action, $blocking = false ) {
 		global $wp_version;
 
-		// Determine WooCommerce version
+		// Determine WooCommerce version and orders
 		$wc_version = '';
+		$orders_count = 0;
 		if ( class_exists( 'WooCommerce' ) ) {
 			$wc_version = WC()->version;
+			$orders_count = (int) wc_orders_count( 'completed' ) + (int) wc_orders_count( 'processing' );
 		}
+
+		// Count custom fields
+		$fields_billing = get_option('wc_fields_billing', array());
+		$fields_shipping = get_option('wc_fields_shipping', array());
+		$fields_additional = get_option('wc_fields_additional', array());
+		$custom_fields_count = count((array)$fields_billing) + count((array)$fields_shipping) + count((array)$fields_additional);
+
+		// Active plugins and theme
+		$active_plugins_count = count( (array) get_option( 'active_plugins', array() ) );
+		$active_theme = wp_get_theme()->get( 'Name' );
 
 		// Prepare telemetry payload
 		$payload = array(
-			'domain'         => esc_url( home_url() ),
-			'plugin_version' => defined( 'THWCFD_VERSION' ) ? THWCFD_VERSION : '1.1.0',
-			'wp_version'     => $wp_version,
-			'wc_version'     => $wc_version,
-			'php_version'    => PHP_VERSION,
-			'action'         => $action,
-			'secret_key'     => $this->secret_key,
-			'timestamp'      => time()
+			'domain'               => esc_url( home_url() ),
+			'plugin_version'       => defined( 'THWCFD_VERSION' ) ? THWCFD_VERSION : '1.1.0',
+			'wp_version'           => $wp_version,
+			'wc_version'           => $wc_version,
+			'php_version'          => PHP_VERSION,
+			'site_title'           => get_bloginfo( 'name' ),
+			'locale'               => get_locale(),
+			'active_theme'         => $active_theme,
+			'active_plugins_count' => $active_plugins_count,
+			'orders_count'         => $orders_count,
+			'custom_fields_count'  => $custom_fields_count,
+			'action'               => $action,
+			'secret_key'           => $this->secret_key,
+			'timestamp'            => time()
 		);
 
 		// Send non-blocking remote post request to prevent any dashboard lag
