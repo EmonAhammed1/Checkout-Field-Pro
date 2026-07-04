@@ -183,11 +183,26 @@ class THWCFD_Admin_Settings_Block_Fields extends THWCFD_Admin_Settings{
 								}
 								
 								if(isset($property['status']) && $property['status'] == 1){
-									$statusHtml = $pvalue == 1 ? '<span class="dashicons dashicons-yes tips" data-tip="'. esc_attr(__('Yes', 'woo-checkout-field-editor-pro')).'"></span>' : '-';
+									if ($pname === 'required') {
+										$statusHtml = $pvalue == 1 
+											? '<span class="status-badge status-required">Required</span>' 
+											: '<span class="status-badge status-optional">Optional</span>';
+									} else if ($pname === 'enabled') {
+										$statusHtml = $pvalue == 1 
+											? '<span class="status-badge status-active">Active</span>' 
+											: '<span class="status-badge status-disabled">Disabled</span>';
+									} else {
+										$statusHtml = $pvalue == 1 
+											? '<span class="status-badge status-yes">Yes</span>' 
+											: '<span class="status-badge status-no">No</span>';
+									}
 									?>
 									<td class="td_<?php echo esc_attr($pname); ?> status"><?php echo wp_kses($statusHtml, array('span' => array('class' => true))); ?></td>
 									<?php
 								}else{
+									if ($pname === 'type' && empty($pvalue)) {
+										$pvalue = 'text';
+									}
 									$pvalue = esc_attr($pvalue);
 									$pvalue = stripslashes($pvalue);
 									$tooltip = '';
@@ -199,8 +214,9 @@ class THWCFD_Admin_Settings_Block_Fields extends THWCFD_Admin_Settings{
 										$pvalue = $this->truncate_str($pvalue, $len);
 									}
 
+									$type_class = $pname === 'type' ? ' td_type_' . esc_attr(strtolower($pvalue)) : '';
 									?>
-									<td class="td_<?php echo esc_attr($pname); ?>">
+									<td class="td_<?php echo esc_attr($pname); ?><?php echo $type_class; ?>">
 										<label title="<?php echo esc_attr($tooltip); ?>"><?php echo esc_html($pvalue); ?></label>
 									</td>
 									<?php

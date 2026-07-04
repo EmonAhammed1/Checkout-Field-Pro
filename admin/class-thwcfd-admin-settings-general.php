@@ -87,9 +87,9 @@ class THWCFD_Admin_Settings_General extends THWCFD_Admin_Settings{
 		<th class="check-column"><input type="checkbox" style="margin:0px 4px -1px -1px;" onclick="thwcfdSelectAllCheckoutFields(this)"/></th>
 		<th class="name"><?php esc_html_e('Name', 'woo-checkout-field-editor-pro'); ?></th>
 		<th class="id"><?php esc_html_e('Type', 'woo-checkout-field-editor-pro'); ?></th>
-		<th><?php esc_html_e('Label', 'woo-checkout-field-editor-pro'); ?></th>
-		<th><?php esc_html_e('Placeholder', 'woo-checkout-field-editor-pro'); ?></th>
-		<th><?php esc_html_e('Validations', 'woo-checkout-field-editor-pro'); ?></th>
+		<th class="label"><?php esc_html_e('Label', 'woo-checkout-field-editor-pro'); ?></th>
+		<th class="placeholder"><?php esc_html_e('Placeholder', 'woo-checkout-field-editor-pro'); ?></th>
+		<th class="validate"><?php esc_html_e('Validations', 'woo-checkout-field-editor-pro'); ?></th>
         <th class="status"><?php esc_html_e('Required', 'woo-checkout-field-editor-pro'); ?></th>
 		<th class="status"><?php esc_html_e('Enabled', 'woo-checkout-field-editor-pro'); ?></th>	
         <th class="action"><?php esc_html_e('Edit', 'woo-checkout-field-editor-pro'); ?></th>	
@@ -143,7 +143,7 @@ class THWCFD_Admin_Settings_General extends THWCFD_Admin_Settings{
 	                <?php 
 					$i=0;
 					foreach( $fields as $name => $field ) :
-						$type = isset($field['type']) ? $field['type'] : '';
+						$type = isset($field['type']) && !empty($field['type']) ? $field['type'] : 'text';
 						$label = isset($field['label']) ? $field['label'] : '';
 						$placeholder = isset($field['placeholder']) ? $field['placeholder'] : '';
 						$label = THWCFD_Utils::translate_dynamic_text($label, 'label');
@@ -155,8 +155,12 @@ class THWCFD_Admin_Settings_General extends THWCFD_Admin_Settings{
 
 						$validate = is_array($validate) ? implode(",", $validate) : '';
 
-						$required_status = $required ? '<span class="dashicons dashicons-yes tips" data-tip="Yes"></span>' : '-';
-						$enabled_status = $enabled ? '<span class="dashicons dashicons-yes tips" data-tip="Yes"></span>' : '-';
+						$required_status = $required 
+							? '<span class="status-badge status-required">Required</span>' 
+							: '<span class="status-badge status-optional">Optional</span>';
+						$enabled_status = $enabled 
+							? '<span class="status-badge status-active">Active</span>' 
+							: '<span class="status-badge status-disabled">Disabled</span>';
 
 						$props_json = htmlspecialchars($this->get_property_set_json($name, $field));
 						//$options_json = isset($field['options_json']) && $field['options_json'] ? htmlspecialchars($field['options_json']) : '';
@@ -179,7 +183,7 @@ class THWCFD_Admin_Settings_General extends THWCFD_Admin_Settings{
 	                        </td>
 	                        <td class="td_select"><input type="checkbox" name="select_field"/></td>
 	                        <td class="td_name"><?php echo esc_html( $name ); ?></td>
-	                        <td class="td_type"><?php echo esc_html($type); ?></td>
+	                        <td class="td_type td_type_<?php echo esc_attr(strtolower($type)); ?>"><?php echo esc_html($type); ?></td>
 							<?php /*
 							// The following lines were removed because they violate WordPress i18n rules.
 							<td class="td_placeholder"><?php echo esc_html_e($placeholder, 'woo-checkout-field-editor-pro'); ?></td> 

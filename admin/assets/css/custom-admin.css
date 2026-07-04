@@ -63,8 +63,9 @@
 .wc-cfm-wrap.thwcfd-wrap,
 .wrap.wc-cfm-wrap {
 	font-family: var(--cf-font) !important;
-	max-width: 1300px !important;
-	margin: 28px 24px 100px 0 !important;
+	max-width: 1440px !important;
+	width: calc(100% - 48px) !important;
+	margin: 28px auto 100px auto !important;
 	color: var(--cf-text) !important;
 	background: var(--cf-bg) !important;
 	-webkit-font-smoothing: antialiased;
@@ -314,8 +315,30 @@ table#thwcfd_checkout_fields tfoot tr:last-child th {
 	width: auto !important;
 }
 
-/* Hide column header row */
-table#thwcfd_checkout_fields thead tr:last-child,
+/* Show and style column header row */
+table#thwcfd_checkout_fields thead tr:last-child {
+	display: flex !important;
+	align-items: center !important;
+	padding: 12px 20px !important;
+	background: transparent !important;
+	border: none !important;
+	margin-bottom: 6px !important;
+	width: auto !important;
+}
+
+table#thwcfd_checkout_fields thead tr:last-child th {
+	font-family: var(--cf-font) !important;
+	font-size: 11px !important;
+	font-weight: 700 !important;
+	color: var(--cf-text-muted) !important;
+	text-transform: uppercase !important;
+	letter-spacing: 0.8px !important;
+	border: none !important;
+	background: transparent !important;
+	padding: 0 !important;
+	box-shadow: none !important;
+}
+
 table#thwcfd_checkout_fields tfoot tr:first-child {
 	display: none !important;
 }
@@ -412,6 +435,7 @@ table#thwcfd_checkout_fields tbody tr.thpladmin-disabled {
 }
 
 /* ── DRAG HANDLE ─────────────────────────── */
+table#thwcfd_checkout_fields thead tr th.sort,
 table#thwcfd_checkout_fields tbody tr td.sort {
 	cursor: grab !important;
 	display: flex !important;
@@ -420,7 +444,7 @@ table#thwcfd_checkout_fields tbody tr td.sort {
 	padding: 0 8px 0 0 !important;
 	background: transparent !important;
 	border: none !important;
-	flex-shrink: 0;
+	flex-shrink: 0 !important;
 }
 
 table#thwcfd_checkout_fields tbody tr td.sort:before {
@@ -438,6 +462,7 @@ table#thwcfd_checkout_fields tbody tr:hover td.sort:before {
 }
 
 /* ── CHECKBOX SELECT ─────────────────────── */
+table#thwcfd_checkout_fields thead tr th.check-column,
 table#thwcfd_checkout_fields tbody tr td.td_select {
 	display: flex !important;
 	align-items: center !important;
@@ -445,9 +470,10 @@ table#thwcfd_checkout_fields tbody tr td.td_select {
 	padding: 0 10px 0 0 !important;
 	background: transparent !important;
 	border: none !important;
-	flex-shrink: 0;
+	flex-shrink: 0 !important;
 }
 
+table#thwcfd_checkout_fields thead tr th.check-column input[type="checkbox"],
 table#thwcfd_checkout_fields tbody tr td.td_select input[type="checkbox"] {
 	margin: 0 !important;
 	width: 16px !important;
@@ -458,184 +484,232 @@ table#thwcfd_checkout_fields tbody tr td.td_select input[type="checkbox"] {
 }
 
 /* ── FIELD LABEL + NAME ───────────────────── */
+table#thwcfd_checkout_fields thead tr th.name,
+table#thwcfd_checkout_fields tbody tr td.td_name {
+	width: 140px !important;
+	min-width: 140px !important;
+	flex: 0 0 140px !important;
+	margin-right: 12px !important;
+}
+
+table#thwcfd_checkout_fields tbody tr td.td_name {
+	display: inline-flex !important;
+	align-items: center !important;
+	background: #f1f5f9 !important;
+	color: #334155 !important;
+	font-family: 'Consolas', 'Courier New', monospace !important;
+	font-size: 11px !important;
+	font-weight: 700 !important;
+	padding: 4px 10px !important;
+	border-radius: 6px !important;
+	border: 1px solid #cbd5e1 !important;
+	letter-spacing: 0.3px;
+	max-width: fit-content;
+}
+
+table#thwcfd_checkout_fields thead tr th.label,
 table#thwcfd_checkout_fields tbody tr td.td_label {
+	flex: 1.5 !important;
+	min-width: 160px !important;
+	margin-right: 16px !important;
 	display: flex !important;
 	flex-direction: column !important;
 	justify-content: center !important;
-	flex: 2 !important;
-	min-width: 160px !important;
-	padding: 0 16px 0 0 !important;
 	background: transparent !important;
 	border: none !important;
 	gap: 3px;
 }
 
-table#thwcfd_checkout_fields tbody tr td.td_label .field-label-title {
-	font-size: 15px !important;
+table#thwcfd_checkout_fields tbody tr td.td_label,
+table#thwcfd_checkout_fields tbody tr td.td_label label {
+	font-size: 14px !important;
 	font-weight: 700 !important;
-	color: var(--cf-text) !important;
-	line-height: 1.3;
-}
-
-/* Field key pill inside label column */
-table#thwcfd_checkout_fields tbody tr td.td_label .field-key,
-table#thwcfd_checkout_fields tbody tr td.td_name {
-	display: inline-flex !important;
-	align-items: center !important;
-	background: #f3f4f6 !important;
-	color: #6b7280 !important;
-	font-family: 'Consolas', 'Courier New', monospace !important;
-	font-size: 10px !important;
-	font-weight: 600 !important;
-	padding: 2px 8px !important;
-	border-radius: 4px !important;
-	border: none !important;
-	letter-spacing: 0.3px;
-	max-width: fit-content;
-}
-
-table#thwcfd_checkout_fields tbody tr td.td_name {
-	flex: 0 0 auto !important;
-	width: auto !important;
+	color: #1e293b !important;
+	cursor: default;
 }
 
 /* ── TYPE BADGE ──────────────────────────── */
+table#thwcfd_checkout_fields thead tr th.id,
+table#thwcfd_checkout_fields thead tr th.type,
 table#thwcfd_checkout_fields tbody tr td.td_type {
-	display: flex !important;
-	align-items: center !important;
-	justify-content: center !important;
-	flex: 0 0 auto !important;
-	padding: 0 16px 0 0 !important;
-	background: transparent !important;
-	border: none !important;
-}
-
-table#thwcfd_checkout_fields tbody tr td.td_type span,
-table#thwcfd_checkout_fields tbody tr td.td_type {
+	width: 90px !important;
+	min-width: 90px !important;
+	flex: 0 0 90px !important;
+	margin-right: 16px !important;
 	display: inline-flex !important;
 	align-items: center !important;
 	justify-content: center !important;
-	background: linear-gradient(135deg, var(--cf-primary-light), rgba(139,92,246,0.10)) !important;
-	color: var(--cf-primary) !important;
-	border: 1px solid rgba(99,102,241,0.20) !important;
+}
+
+table#thwcfd_checkout_fields tbody tr td.td_type label {
+	color: inherit !important;
+	font-size: inherit !important;
+	font-weight: inherit !important;
+	letter-spacing: inherit !important;
+	text-transform: inherit !important;
+}
+
+table#thwcfd_checkout_fields tbody tr td.td_type {
 	font-size: 10px !important;
 	font-weight: 700 !important;
 	letter-spacing: 0.8px !important;
 	text-transform: uppercase !important;
-	padding: 4px 12px !important;
-	border-radius: 30px !important;
-	min-width: 68px !important;
-	height: 24px !important;
+	padding: 4px 10px !important;
+	border-radius: 6px !important;
+	min-width: 76px !important;
+	height: 22px !important;
 	white-space: nowrap !important;
+	transition: all 0.2s var(--cf-ease) !important;
+	border: 1px solid transparent !important;
+	background: rgba(99, 102, 241, 0.1) !important;
+	color: var(--cf-primary) !important;
+	border-color: rgba(99, 102, 241, 0.2) !important;
 }
 
-/* ── WIDTH BADGE ─────────────────────────── */
-table#thwcfd_checkout_fields tbody tr td.td_class {
+/* Type Specific Badge Colors */
+table#thwcfd_checkout_fields tbody tr td.td_type_text {
+	background: rgba(59, 130, 246, 0.1) !important;
+	color: #1d4ed8 !important;
+	border-color: rgba(59, 130, 246, 0.2) !important;
+}
+table#thwcfd_checkout_fields tbody tr td.td_type_number {
+	background: rgba(13, 148, 136, 0.1) !important;
+	color: #0f766e !important;
+	border-color: rgba(13, 148, 136, 0.2) !important;
+}
+table#thwcfd_checkout_fields tbody tr td.td_type_email {
+	background: rgba(99, 102, 241, 0.1) !important;
+	color: #4338ca !important;
+	border-color: rgba(99, 102, 241, 0.2) !important;
+}
+table#thwcfd_checkout_fields tbody tr td.td_type_tel,
+table#thwcfd_checkout_fields tbody tr td.td_type_phone {
+	background: rgba(16, 185, 129, 0.1) !important;
+	color: #047857 !important;
+	border-color: rgba(16, 185, 129, 0.2) !important;
+}
+table#thwcfd_checkout_fields tbody tr td.td_type_password {
+	background: rgba(244, 63, 94, 0.1) !important;
+	color: #be123c !important;
+	border-color: rgba(244, 63, 94, 0.2) !important;
+}
+table#thwcfd_checkout_fields tbody tr td.td_type_select,
+table#thwcfd_checkout_fields tbody tr td.td_type_multiselect {
+	background: rgba(168, 85, 247, 0.1) !important;
+	color: #7e22ce !important;
+	border-color: rgba(168, 85, 247, 0.2) !important;
+}
+table#thwcfd_checkout_fields tbody tr td.td_type_radio,
+table#thwcfd_checkout_fields tbody tr td.td_type_checkbox,
+table#thwcfd_checkout_fields tbody tr td.td_type_checkboxgroup {
+	background: rgba(245, 158, 11, 0.1) !important;
+	color: #b45309 !important;
+	border-color: rgba(245, 158, 11, 0.2) !important;
+}
+table#thwcfd_checkout_fields tbody tr td.td_type_country,
+table#thwcfd_checkout_fields tbody tr td.td_type_state {
+	background: rgba(217, 70, 239, 0.1) !important;
+	color: #a21caf !important;
+	border-color: rgba(217, 70, 239, 0.2) !important;
+}
+table#thwcfd_checkout_fields tbody tr td.td_type_textarea {
+	background: rgba(107, 114, 128, 0.1) !important;
+	color: #374151 !important;
+	border-color: rgba(107, 114, 128, 0.2) !important;
+}
+
+/* ── PLACEHOLDER & VALIDATION COLUMNS ─── */
+table#thwcfd_checkout_fields thead tr th.placeholder,
+table#thwcfd_checkout_fields tbody tr td.td_placeholder {
+	flex: 1.5 !important;
+	min-width: 160px !important;
+	margin-right: 16px !important;
 	display: flex !important;
 	align-items: center !important;
-	flex: 0 0 auto !important;
-	padding: 0 16px 0 0 !important;
+	color: var(--cf-text-muted) !important;
+	font-size: 13px !important;
+	font-weight: 500 !important;
+}
+
+table#thwcfd_checkout_fields thead tr th.validate,
+table#thwcfd_checkout_fields tbody tr td.td_validate {
+	flex: 1 !important;
+	min-width: 100px !important;
+	margin-right: 16px !important;
+	display: flex !important;
+	align-items: center !important;
+	color: var(--cf-text-muted) !important;
+	font-size: 13px !important;
+	font-weight: 500 !important;
+}
+
+/* ── STATUS BADGES (Required & Enabled) ─── */
+table#thwcfd_checkout_fields thead tr th.status,
+table#thwcfd_checkout_fields tbody tr td.status {
+	width: 84px !important;
+	flex-shrink: 0 !important;
+	margin-right: 12px !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
 	background: transparent !important;
 	border: none !important;
 }
 
-table#thwcfd_checkout_fields tbody tr td.td_class span,
-table#thwcfd_checkout_fields tbody tr td.td_class {
+.status-badge {
 	display: inline-flex !important;
 	align-items: center !important;
 	justify-content: center !important;
-	background: #f3f4f6 !important;
-	color: #374151 !important;
-	border: 1px solid #e5e7eb !important;
-	font-size: 11px !important;
-	font-weight: 600 !important;
-	padding: 4px 12px !important;
-	border-radius: 30px !important;
-	min-width: 80px !important;
-	height: 24px !important;
+	font-family: var(--cf-font) !important;
+	font-size: 10px !important;
+	font-weight: 700 !important;
+	padding: 4px 10px !important;
+	border-radius: 6px !important;
+	min-width: 76px !important;
+	text-transform: uppercase !important;
+	letter-spacing: 0.5px !important;
+	border: 1px solid transparent !important;
+	line-height: 1 !important;
+	height: 22px !important;
+	box-sizing: border-box !important;
 	white-space: nowrap !important;
 }
 
-/* ── TOGGLE SWITCHES (Required & Enabled) ─── */
-table#thwcfd_checkout_fields tbody tr td.status {
-	display: flex !important;
-	flex-direction: column !important;
-	align-items: center !important;
-	justify-content: center !important;
-	width: 84px !important;
-	padding: 0 12px 0 0 !important;
-	background: transparent !important;
-	border: none !important;
-	gap: 2px;
-	flex-shrink: 0;
+.status-badge.status-required {
+	background: rgba(244, 63, 94, 0.09) !important;
+	color: #e11d48 !important;
+	border-color: rgba(244, 63, 94, 0.2) !important;
 }
 
-/* Toggle label text */
-table#thwcfd_checkout_fields tbody tr td.status label.status-label {
-	font-size: 9px !important;
-	font-weight: 700 !important;
-	letter-spacing: 0.6px !important;
-	text-transform: uppercase !important;
-	color: var(--cf-text-light) !important;
-	margin-bottom: 4px !important;
-	display: block;
+.status-badge.status-optional {
+	background: #f3f4f6 !important;
+	color: #6b7280 !important;
+	border-color: #e5e7eb !important;
 }
 
-/* Native checkbox → modern toggle pill */
-table#thwcfd_checkout_fields tbody tr td.status .thpladmin-toggle,
-table#thwcfd_checkout_fields tbody tr td.status input[type="checkbox"].thpladmin-toggle {
-	appearance: none !important;
-	-webkit-appearance: none !important;
-	width: 44px !important;
-	height: 24px !important;
-	background: #e5e7eb !important;
-	border-radius: 30px !important;
-	position: relative !important;
-	cursor: pointer !important;
-	transition: background 0.25s var(--cf-ease) !important;
-	border: none !important;
-	outline: none !important;
-	box-shadow: inset 0 1px 3px rgba(0,0,0,0.10) !important;
-	flex-shrink: 0;
-	margin: 0 !important;
+.status-badge.status-active,
+.status-badge.status-yes {
+	background: rgba(34, 197, 94, 0.1) !important;
+	color: #16a34a !important;
+	border-color: rgba(34, 197, 94, 0.2) !important;
 }
 
-table#thwcfd_checkout_fields tbody tr td.status .thpladmin-toggle:checked,
-table#thwcfd_checkout_fields tbody tr td.status input[type="checkbox"].thpladmin-toggle:checked {
-	background: var(--cf-success) !important;
-	box-shadow: 0 2px 8px rgba(34,197,94,0.30) !important;
+.status-badge.status-disabled,
+.status-badge.status-no {
+	background: rgba(107, 114, 128, 0.1) !important;
+	color: #4b5563 !important;
+	border-color: rgba(107, 114, 128, 0.2) !important;
 }
 
-table#thwcfd_checkout_fields tbody tr td.status .thpladmin-toggle::before,
-table#thwcfd_checkout_fields tbody tr td.status input[type="checkbox"].thpladmin-toggle::before {
-	content: '' !important;
-	position: absolute !important;
-	width: 18px !important;
-	height: 18px !important;
-	background: #ffffff !important;
-	border-radius: 50% !important;
-	top: 3px !important;
-	left: 3px !important;
-	transition: transform 0.25s var(--cf-ease) !important;
-	box-shadow: 0 1px 4px rgba(0,0,0,0.18) !important;
-}
-
-table#thwcfd_checkout_fields tbody tr td.status .thpladmin-toggle:checked::before,
-table#thwcfd_checkout_fields tbody tr td.status input[type="checkbox"].thpladmin-toggle:checked::before {
-	transform: translateX(20px) !important;
-}
-
-/* ── ACTION BUTTONS (Edit / Delete) ─────── */
+/* ── ACTION BUTTONS (Classic Edit / Delete) ─────── */
+table#thwcfd_checkout_fields thead tr th.action,
 table#thwcfd_checkout_fields tbody tr td.action {
+	width: 120px !important;
+	flex-shrink: 0 !important;
 	display: flex !important;
 	align-items: center !important;
 	justify-content: flex-end !important;
 	gap: 8px !important;
-	width: 120px !important;
-	padding: 0 !important;
-	background: transparent !important;
-	border: none !important;
-	flex-shrink: 0;
 }
 
 /* Edit button */
@@ -692,6 +766,59 @@ table#thwcfd_checkout_fields tbody tr td.action button.f_delete_btn:hover {
 	border-color: var(--cf-danger) !important;
 	color: var(--cf-danger) !important;
 	transform: translateY(-1px);
+}
+
+/* ── BLOCK EDITOR ACTIONS ───────────────── */
+table#thwcfd_checkout_fields thead tr th.actions,
+table#thwcfd_checkout_fields tbody tr td.td_actions {
+	width: 120px !important;
+	flex-shrink: 0 !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: flex-end !important;
+	gap: 8px !important;
+}
+
+table#thwcfd_checkout_fields tbody tr td.td_actions span.f_edit_btn,
+table#thwcfd_checkout_fields tbody tr td.td_actions span.f_copy_btn {
+	width: 32px !important;
+	height: 32px !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	border-radius: var(--cf-r-xs) !important;
+	font-size: 16px !important;
+	cursor: pointer !important;
+	transition: all 0.2s var(--cf-ease) !important;
+	border: 1.5px solid var(--cf-border) !important;
+	background: #ffffff !important;
+	color: var(--cf-text-muted) !important;
+	box-shadow: var(--cf-shadow-xs) !important;
+}
+
+table#thwcfd_checkout_fields tbody tr td.td_actions span.f_edit_btn:hover {
+	background: var(--cf-primary-light) !important;
+	border-color: var(--cf-primary) !important;
+	color: var(--cf-primary) !important;
+	transform: translateY(-1px);
+	box-shadow: var(--cf-shadow-sm) !important;
+}
+
+table#thwcfd_checkout_fields tbody tr td.td_actions span.f_copy_btn:hover {
+	background: rgba(16, 185, 129, 0.08) !important;
+	border-color: #10b981 !important;
+	color: #10b981 !important;
+	transform: translateY(-1px);
+	box-shadow: var(--cf-shadow-sm) !important;
+}
+
+table#thwcfd_checkout_fields tbody tr td.td_actions span.disabled {
+	opacity: 0.5 !important;
+	cursor: not-allowed !important;
+	pointer-events: none !important;
+	background: #f3f4f6 !important;
+	border-color: #e5e7eb !important;
+	color: #9ca3af !important;
 }
 
 /* ============================================================

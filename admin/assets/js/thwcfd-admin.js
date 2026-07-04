@@ -1293,8 +1293,7 @@ var thwcfd_settings = (function($, window, document) {
 				row.removeClass("thpladmin-disabled");				
 			}
 			
-			//row.find(".f_edit_btn").prop('disabled', enabled == 1 ? false : true);
-			row.find(".td_enabled").html(enabled == 1 ? '<span class="dashicons dashicons-yes tips" data-tip="'+ __('Yes', 'woo-checkout-field-editor-pro') +'"></span>' : '-');
+			row.find(".td_enabled").html(enabled == 1 ? '<span class="status-badge status-active">Active</span>' : '<span class="status-badge status-disabled">Disabled</span>');
 			row.find(".f_enabled").val(enabled);
 	  	});	
 	}
