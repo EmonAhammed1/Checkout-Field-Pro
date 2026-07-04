@@ -77,6 +77,11 @@ class Emon_Plugin_Updater {
 			return $this->github_data;
 		}
 
+		// Clear cache if WordPress is forcing a check
+		if ( isset( $_GET['force-check'] ) && $_GET['force-check'] == 1 ) {
+			delete_transient( $this->transient_key );
+		}
+
 		// Try transient cache first
 		$cached = get_transient( $this->transient_key );
 		if ( $cached !== false ) {
