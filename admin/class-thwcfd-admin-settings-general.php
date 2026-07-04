@@ -195,7 +195,7 @@ class THWCFD_Admin_Settings_General extends THWCFD_Admin_Settings{
 	                        <td class="td_required status"><?php echo wp_kses($required_status, array('span' => array('class' => true))); ?></td>
 	                        <td class="td_enabled status"><?php echo wp_kses($enabled_status, array('span' => array('class' => true))); ?></td>
 	                        <td class="td_edit action">
-	                        	<button type="button" class="button action-btn f_edit_btn" <?php echo($enabled ? '' : 'disabled') ?> 
+	                        	<button type="button" class="button action-btn f_edit_btn" 
 	                            onclick="thwcfdOpenEditFieldForm(this, <?php echo esc_js($i); ?>)"><?php esc_html_e('Edit', 'woo-checkout-field-editor-pro'); ?></button>
 	                        </td>
 	                	</tr>

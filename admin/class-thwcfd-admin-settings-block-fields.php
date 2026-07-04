@@ -150,7 +150,7 @@ class THWCFD_Admin_Settings_Block_Fields extends THWCFD_Admin_Settings{
 					
 						//$disabled_actions = $is_enabled ? in_array($type, THWCFE_Utils_Field::$SPECIAL_FIELD_TYPES) : 1;
 						$disable_actions = in_array($name, $ignore_fields) ? true : false;
-						$disable_edit = $disable_actions || !$is_enabled ? true : false;
+						$disable_edit = $disable_actions ? true : false;
 						//$disable_copy = $disable_actions || in_array($type, THWCFD_Utils_Field::$SPECIAL_FIELD_TYPES) ? true : false;
 						$disable_copy = false;
 						$disabled_cb = $disable_actions ? 'disabled' : '';
