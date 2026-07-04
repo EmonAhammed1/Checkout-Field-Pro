@@ -138,10 +138,7 @@ class THWCFD_Admin_Settings_General extends THWCFD_Admin_Settings{
                 	<tr><?php $this->render_actions_row($section); ?></tr>
                 	<tr><?php $this->render_checkout_fields_heading_row(); ?></tr>						
 				</thead>
-                <tfoot>
-                	<tr><?php $this->render_checkout_fields_heading_row(); ?></tr>
-					<tr><?php $this->render_actions_row($section); ?></tr>
-				</tfoot>
+
 				<tbody class="ui-sortable">
 	                <?php 
 					$i=0;

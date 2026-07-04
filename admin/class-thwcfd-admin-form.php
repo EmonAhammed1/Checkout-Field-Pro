@@ -296,8 +296,11 @@ abstract class THWCFD_Admin_Form {
 			$field_props .= isset($field['checked']) && $field['checked'] === 1 ? ' checked' : '';
 			$field_props .= $args['input_props'];
 
-			$field_html  = '<input type="checkbox" id="'. esc_attr($fid).'" '. wp_kses_post($field_props) .' />';
-			$field_html .= '<label for="'. esc_attr($fid) .'" '. wp_kses_post($args['label_props']) .' > '. esc_html($flabel) .'</label>';
+			$field_html  = '<label class="emon-toggle-wrap" for="'. esc_attr($fid) .'" '. wp_kses_post($args['label_props']) .'>';
+			$field_html .= '<input type="checkbox" id="'. esc_attr($fid).'" class="emon-toggle-input" '. wp_kses_post($field_props) .' />';
+			$field_html .= '<span class="emon-toggle-slider"></span>';
+			$field_html .= '<span class="emon-toggle-label">'. esc_html($flabel) .'</span>';
+			$field_html .= '</label>';
 		}
 		if(!$render_cell && $args['render_input_cell']){
 			return '<td '.wp_kses_post($args['cell_props']) .' >'. wp_kses_post($field_html) .'</td>';
