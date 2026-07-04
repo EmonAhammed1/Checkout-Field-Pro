@@ -34,7 +34,7 @@ if(is_woocommerce_active()) {
 
 	#require THWCFD_PATH . 'classes/class-thwcfd.php';
 	require plugin_dir_path( __FILE__ ) . 'includes/class-thwcfd.php';
-	require plugin_dir_path( __FILE__ ) . 'includes/class-emon-updater.php';
+	// require plugin_dir_path( __FILE__ ) . 'includes/class-emon-updater.php';
 
 	function run_thwcfd() {
 		$plugin = new THWCFD();
@@ -42,9 +42,8 @@ if(is_woocommerce_active()) {
 	run_thwcfd();
 
 	// ─── GitHub Auto-Updater ─────────────────────────────────────────────────
-	// Change the two values below to match your GitHub username and repository name.
-	// When you publish a new Release on GitHub with a tag like "v1.0.3",
-	// WordPress will automatically show an "Update Available" notice.
+	// Disabled as per user request: "auto updat chai na"
+	/*
 	if ( is_admin() ) {
 		new Emon_Plugin_Updater(
 			__FILE__,
@@ -52,6 +51,7 @@ if(is_woocommerce_active()) {
 			'Checkout-Field-Pro' // GitHub repository name
 		);
 	}
+	*/
 	// ─────────────────────────────────────────────────────────────────────────
 }
 
